@@ -57,3 +57,5 @@ vim.keymap.set({ "n", "v" }, "<leader>cbf", function()
     vim.b[0].disable_autoformat = true
   end
 end, { desc = "Disable autoformat on save buffer" })
+
+vim.keymap.set("i", "<Tab>", require("scripts.intellitab").indent)
