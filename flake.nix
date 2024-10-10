@@ -167,6 +167,7 @@
               barbecue-nvim
               undotree
               conform-nvim
+              neocord
             ];
           };
 

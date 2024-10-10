@@ -216,4 +216,16 @@ return {
       },
     },
   },
+  {
+    "neocord",
+    event = "BufEnter",
+    after = function()
+      require("neocord").setup({
+        editing_text = "Hacking %s",
+        logo_tooltip = "The One True Text Editor",
+        terminal_text = "Bypassing the mainframe",
+        workspace_text = "The One True Text Editor",
+      })
+    end,
+  },
 }
