@@ -151,12 +151,12 @@
               lua-language-server
               nixd
               nixfmt-rfc-style
-			  nodePackages_latest.prettier
-			  taplo
-			  typstyle
-			  rustfmt
-			  black
-			  stylua
+              nodePackages_latest.prettier
+              taplo
+              typstyle
+              rustfmt
+              black
+              stylua
             ];
           };
 
@@ -188,6 +188,7 @@
                   vim
                   bash
                   make
+                  gitcommit
                 ])
               ))
             ];
@@ -219,7 +220,7 @@
               trouble-nvim
               lualine-nvim
               mini-ai
-			  mini-hipatterns
+              mini-hipatterns
               mini-surround
               mini-notify
               mini-starter
@@ -231,8 +232,8 @@
               gitsigns-nvim
               diffview-nvim
               barbecue-nvim
-			  undotree
-			  conform-nvim
+              undotree
+              conform-nvim
             ];
           };
 
