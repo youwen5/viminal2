@@ -9,6 +9,7 @@ return {
   require("plugins.gitsigns"),
   require("plugins.autopairs"),
   require("plugins.trouble"),
+  require("plugins.render-markdown"),
   require("plugins.toggleterm"),
   { "telescope-ui-select.nvim" },
   {
