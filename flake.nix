@@ -29,6 +29,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    plugins-typst-preview = {
+      url = "github:chomosuke/typst-preview.nvim";
+      flake = false;
+    };
+
+    plugins-lsp-progress = {
+      url = "github:linrongbin16/lsp-progress.nvim";
+      flake = false;
+    };
+
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
     # i.e. if it wasnt on nixpkgs, but doesnt have an extra build step.
@@ -132,23 +142,23 @@
           # this includes LSPs
           lspsAndRuntimeDeps = {
             general = with pkgs; [
-              lua-language-server
+              # essential
               ripgrep
               python312Packages.pylatexenc
+              fd
+
+              # lsps / formatters
+              lua-language-server
+              nixd
+              nixfmt-rfc-style
             ];
           };
 
-          # plugins that will load at startup
+          # install lz.n and treesitter grammars
           startupPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [ ];
             general = with pkgs.vimPlugins; [
               lz-n
-              telescope-nvim
-              markdown-preview-nvim
-              render-markdown-nvim
-              which-key-nvim
-              rose-pine
-              nvim-web-devicons
               (nvim-treesitter.withPlugins (
                 p:
                 (with p; [
@@ -165,6 +175,7 @@
                   toml
                   yaml
                   markdown
+                  markdown_inline
                   svelte
                   css
                   html
@@ -176,16 +187,45 @@
             ];
           };
 
-          # plugins which are installed and will be lazy-loaded by lz.n
+          # plugins which are installed, but not loaded, and will be handled by
+          # lz.n (not necessarily lazy loaded)
           optionalPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [
               inputs.blink-cmp.packages.${pkgs.system}.default
+              typst-preview
+              lsp-progress
             ];
             general = with pkgs.vimPlugins; [
               nvim-autopairs
               nvim-lspconfig
               intellitab-nvim
               sleuth
+              which-key-nvim
+              telescope-nvim
+              markdown-preview-nvim
+              render-markdown-nvim
+              rose-pine
+              nvim-web-devicons
+              oil-nvim
+              telescope-ui-select-nvim
+              harpoon2
+              toggleterm-nvim
+              trouble-nvim
+              lualine-nvim
+              mini-ai
+			  mini-hipatterns
+              mini-surround
+              mini-notify
+              mini-starter
+              mini-trailspace
+              cellular-automaton-nvim
+              indent-blankline-nvim
+              mini-bufremove
+              neogit
+              gitsigns-nvim
+              diffview-nvim
+              barbecue-nvim
+			  undotree
             ];
           };
 
@@ -222,13 +262,13 @@
           # in your lua config via
           # vim.g.python3_host_prog
           # or run from nvim terminal via :!<packagename>-python3
-          extraPython3Packages = {
-            test = (_: [ ]);
-          };
-          # populates $LUA_PATH and $LUA_CPATH
-          extraLuaPackages = {
-            test = [ (_: [ ]) ];
-          };
+          # extraPython3Packages = {
+          #   test = (_: [ ]);
+          # };
+          # # populates $LUA_PATH and $LUA_CPATH
+          # extraLuaPackages = {
+          #   test = [ (_: [ ]) ];
+          # };
         };
 
       # And then build a package with specific categories from above here:
@@ -261,15 +301,9 @@
               general = true;
               gitPlugins = true;
               customPlugins = true;
-              test = true;
-              example = {
-                youCan = "add more than just booleans";
-                toThisSet = [
-                  "and the contents of this categories set"
-                  "will be accessible to your lua with"
-                  "nixCats('path.to.value')"
-                  "see :help nixCats"
-                ];
+              bin = {
+                websocat = "${pkgs.websocat}/bin/websocat";
+                tinymist = "${pkgs.tinymist}/bin/tinymist";
               };
             };
           };

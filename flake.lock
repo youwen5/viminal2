@@ -649,6 +649,38 @@
         "type": "github"
       }
     },
+    "plugins-lsp-progress": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1721008335,
+        "narHash": "sha256-OafRT5AnxRTOh7MYofRFjti0+pobKQihymZs/kr5w0A=",
+        "owner": "linrongbin16",
+        "repo": "lsp-progress.nvim",
+        "rev": "d5f4d28efe75ce636bfbe271eb45f39689765aab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "linrongbin16",
+        "repo": "lsp-progress.nvim",
+        "type": "github"
+      }
+    },
+    "plugins-typst-preview": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1727642175,
+        "narHash": "sha256-n0TfcXJLlRXdS6S9dwYHN688IipVSDLVXEqyYs+ROG8=",
+        "owner": "chomosuke",
+        "repo": "typst-preview.nvim",
+        "rev": "0354cc1a7a5174a2e69cdc21c4db9a3ee18bb20a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chomosuke",
+        "repo": "typst-preview.nvim",
+        "type": "github"
+      }
+    },
     "poetry2nix": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -750,7 +782,9 @@
       "inputs": {
         "blink-cmp": "blink-cmp",
         "nixCats": "nixCats",
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_4",
+        "plugins-lsp-progress": "plugins-lsp-progress",
+        "plugins-typst-preview": "plugins-typst-preview"
       }
     },
     "rust-analyzer-src": {
