@@ -68,6 +68,7 @@ return {
     "mini.notify",
     after = function()
       require("mini.notify").setup({
+        -- handled by statusline
         lsp_progress = { enable = false },
       })
     end,

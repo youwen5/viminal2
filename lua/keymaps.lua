@@ -24,6 +24,7 @@ vim.keymap.set({ "n", "v" }, "<leader>P", '"+P', { desc = "put before cursor fro
 
 vim.keymap.set("i", "<Tab>", require("scripts.intellitab").indent)
 
+-- Allow increment/decrement repeatedly in visual
 vim.keymap.set("v", "<C-a>", "<C-a>gv")
 vim.keymap.set("v", "<C-x>", "<C-x>gv")
 vim.keymap.set("v", "g<C-a>", "g<C-a>gv")
