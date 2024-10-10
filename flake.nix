@@ -78,9 +78,11 @@
               python312Packages.pylatexenc
               fd
 
-              # lsps / formatters
-              lua-language-server
+              # lsps (minimal because should be provided per-project by nix)
               nixd
+              tinymist
+
+              # formatters
               nixfmt-rfc-style
               nodePackages_latest.prettier
               taplo
@@ -89,7 +91,6 @@
               black
               stylua
               marksman
-              tinymist
             ];
           };
 
@@ -139,7 +140,6 @@
               nvim-autopairs
               nvim-lspconfig
               intellitab-nvim
-              sleuth
               which-key-nvim
               telescope-nvim
               markdown-preview-nvim
@@ -188,7 +188,6 @@
                 "vim"
                 "vi"
               ];
-              neovim-unwrapped = pkgs.neovim-unwrapped;
             };
             categories = {
               general = true;
@@ -223,12 +222,7 @@
         devShells = {
           default = pkgs.mkShell {
             name = defaultPackageName;
-            packages = [ defaultPackage ];
-            inputsFrom = with pkgs; [
-              lua-language-server
-              stylua
-            ];
-            shellHook = '''';
+            packages = [ defaultPackage ] ++ (with pkgs; [ lua-language-server ]);
           };
         };
 

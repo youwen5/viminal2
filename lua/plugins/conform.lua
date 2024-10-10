@@ -2,6 +2,40 @@ return {
   "conform.nvim",
   event = "BufWritePre",
   cmd = "ConformInfo",
+  keys = {
+    {
+      "<leader>cf",
+      function()
+        require("conform").format({ async = true })
+      end,
+      desc = "Format code",
+      mode = { "n", "v" },
+    },
+    {
+      "<leader>ctf",
+      function()
+        if vim.g.disable_autoformat then
+          vim.g.disable_autoformat = false
+        else
+          vim.g.disable_autoformat = true
+        end
+      end,
+      desc = "Disable autoformat on save globally",
+      mode = { "n", "v" },
+    },
+    {
+      "<leader>cbf",
+      function()
+        if vim.b[0].disable_autoformat then
+          vim.b[0].disable_autoformat = false
+        else
+          vim.b[0].disable_autoformat = true
+        end
+      end,
+      desc = "Disable autoformat on save buffer",
+      mode = { "n", "v" },
+    },
+  },
   after = function()
     require("conform").setup({
       format_on_save = function(bufnr)

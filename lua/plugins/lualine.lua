@@ -1,6 +1,5 @@
 return {
   "lualine.nvim",
-  event = "BufEnter",
   after = function()
     require("lualine").setup({
       options = {
@@ -25,6 +24,7 @@ return {
         lualine_a = { "branch" },
         lualine_b = {
           function()
+            require("lz.n").trigger_load("lsp-progress")
             return require("lsp-progress").progress()
           end,
         },

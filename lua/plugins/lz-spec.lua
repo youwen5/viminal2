@@ -8,17 +8,15 @@ return {
   require("plugins.lsp-progress"),
   require("plugins.gitsigns"),
   require("plugins.autopairs"),
-  { "telescope-ui-select.nvim", priority = 70 },
+  require("plugins.trouble"),
+  require("plugins.toggleterm"),
+  { "telescope-ui-select.nvim" },
   {
     "nvim-lspconfig",
     event = "BufEnter",
     after = function()
       require("lsp")
     end,
-  },
-  {
-    "sleuth",
-    event = "BufEnter",
   },
   {
     "which-key.nvim",
@@ -29,30 +27,10 @@ return {
     end,
   },
   { "nvim-web-devicons" },
-  { "rose-pine" },
-  { "render-markdown.nvim" },
-  { "markdown-preview.nvim" },
+  { "rose-pine", priority = 100 },
   {
-    "trouble.nvim",
-    event = "LspAttach",
-    after = function()
-      require("trouble").setup()
-      vim.keymap.set("n", "<leader>xx", function()
-        vim.cmd("Trouble diagnostics toggle")
-      end, { desc = "Diagnostics" })
-      vim.keymap.set("n", "<leader>xX", function()
-        vim.cmd("Trouble diagnostics toggle filter.buf=0")
-      end, { desc = "Buffer diagnostics" })
-      vim.keymap.set("n", "<leader>cs", function()
-        vim.cmd("Trouble symbols toggle")
-      end, { desc = "Symbols" })
-      vim.keymap.set("n", "<leader>cl", function()
-        vim.cmd("Trouble lsp toggle win.position=right")
-      end, { desc = "LSP definitions / references /..." })
-      vim.keymap.set("n", "<leader>ql", function()
-        vim.cmd("Trouble qflist toggle")
-      end, { desc = "Quickfix list (trouble)" })
-    end,
+    "markdown-preview.nvim",
+    filetypes = { "markdown" },
   },
   {
     "typst-preview",
@@ -64,27 +42,6 @@ return {
           ["websocat"] = nixCats("bin.websocat"),
         },
       })
-    end,
-  },
-  {
-    "toggleterm.nvim",
-    after = function()
-      require("toggleterm").setup({
-        shade_terminals = false,
-      })
-
-      vim.keymap.set({ "n", "t", "v" }, "<C-l>", function()
-        vim.cmd("ToggleTerm direction=float")
-      end)
-      vim.keymap.set("n", "<leader>tv", function()
-        vim.cmd("ToggleTerm direction=vertical")
-      end)
-      vim.keymap.set("n", "<leader>tt", function()
-        vim.cmd("ToggleTerm direction=horizontal")
-      end)
-      vim.keymap.set("n", "<leader>ts", function()
-        vim.cmd("TermSelect")
-      end)
     end,
   },
   {
@@ -109,7 +66,6 @@ return {
   },
   {
     "mini.notify",
-    event = "BufEnter",
     after = function()
       require("mini.notify").setup({
         lsp_progress = { enable = false },
@@ -126,6 +82,24 @@ return {
   {
     "cellular-automaton.nvim",
     cmd = "CellularAutomaton",
+    keys = {
+      {
+        "<leader>mr",
+        function()
+          vim.cmd.CellularAutomaton("make_it_rain")
+        end,
+        desc = "A surprise!",
+        mode = "n",
+      },
+      {
+        "<leader>bruh",
+        function()
+          vim.cmd.CellularAutomaton("game_of_life")
+        end,
+        desc = "A surprise!",
+        mode = "n",
+      },
+    },
   },
   {
     "indent-blankline.nvim",
@@ -150,13 +124,18 @@ return {
   },
   {
     "mini.bufremove",
-    event = "BufEnter",
+    keys = {
+      {
+        "<leader>bd",
+        function()
+          MiniBufremove.delete()
+        end,
+        mode = { "n", "v" },
+        desc = "Close buffer",
+      },
+    },
     after = function()
       require("mini.bufremove").setup()
-
-      vim.keymap.set({ "n", "v" }, "<leader>bd", function()
-        MiniBufremove.delete()
-      end)
     end,
   },
   {
@@ -169,6 +148,29 @@ return {
   {
     "neogit",
     cmd = "Neogit",
+    keys = {
+      {
+        "<leader>gg",
+        function()
+          vim.cmd.Neogit()
+        end,
+        desc = "Open neogit",
+        mode = "n",
+      },
+      {
+        "<leader>gc",
+        function()
+          vim.cmd.Neogit("kind=floating commit")
+        end,
+        desc = "Open neogit commit menu",
+        mode = "n",
+      },
+    },
+    before = function()
+      local lz = require("lz.n")
+      lz.trigger_load("diffview.nvim")
+      lz.trigger_load("telescope.nvim")
+    end,
     after = function()
       require("neogit").setup({
         graph_style = "unicode",
@@ -187,7 +189,6 @@ return {
     "barbecue.nvim",
     event = "BufEnter",
     after = function()
-      require("barbecue").setup()
       -- triggers CursorHold event faster
       vim.opt.updatetime = 200
 
@@ -214,5 +215,15 @@ return {
   {
     "undotree",
     cmd = "UndotreeToggle",
+    keys = {
+      {
+        "<leader>u",
+        function()
+          vim.cmd.UndotreeToggle()
+        end,
+        desc = "Toggle undotree",
+        mode = "n",
+      },
+    },
   },
 }

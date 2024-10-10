@@ -10,32 +10,86 @@ return {
     })
 
     require("telescope").load_extension("ui-select")
-
-    local builtin = require("telescope.builtin")
-
-    vim.keymap.set("n", "<leader> ", function()
-      local is_git = vim.fn.finddir(".git", vim.fn.getcwd() .. ";")
-      if is_git then
-        builtin.git_files()
-      else
-        builtin.find_files()
-      end
-    end, { desc = "Grep through all files tracked by git, or fall back to just cwd" })
-
-    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Grep through all files in cwd" })
-    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
-    vim.keymap.set("n", "<leader>/", builtin.live_grep)
-    vim.keymap.set("n", "<leader>k", builtin.buffers)
-    vim.keymap.set("n", "<leader>gd", builtin.lsp_definitions, { desc = "Go to LSP definition" })
-    vim.keymap.set("n", "<leader>gi", builtin.lsp_implementations, { desc = "Go to implementations" })
-    vim.keymap.set("n", "<leader>j", builtin.lsp_document_symbols, { desc = "Search through document symbols" })
-    vim.keymap.set(
-      "n",
-      "<leader>fs",
-      builtin.lsp_workspace_symbols,
-      { desc = "Search through entire workspace symbols" }
-    )
-    vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Search through LSP diagnostics" })
   end,
-  priority = 60,
+  keys = {
+    {
+      "<leader> ",
+      function()
+        local builtin = require("telescope.builtin")
+        local is_git = vim.fn.finddir(".git", vim.fn.getcwd() .. ";")
+        if is_git then
+          builtin.git_files()
+        else
+          builtin.find_files()
+        end
+      end,
+      desc = "Grep through all files tracked by git, or fall back to just cwd",
+      mode = "n",
+    },
+    {
+      "<leader>ff",
+      function()
+        require("telescope.builtin").find_files()
+      end,
+      desc = "Grep through all files in cwd",
+      mode = "n",
+    },
+    { "<leader>ca", vim.lsp.buf.code_action, desc = "LSP Code Action", mode = "n" },
+    {
+      "<leader>/",
+      function()
+        require("telescope.builtin").live_grep()
+      end,
+      desc = "Live grep",
+      mode = "n",
+    },
+    {
+      "<leader>k",
+      function()
+        require("telescope.builtin").buffers()
+      end,
+      desc = "List buffers",
+      mode = "n",
+    },
+    {
+      "<leader>gd",
+      function()
+        require("telescope.builtin").lsp_definitions()
+      end,
+      desc = "Go to LSP definition",
+      mode = "n",
+    },
+    {
+      "<leader>gi",
+      function()
+        require("telescope.builtin").lsp_implementations()
+      end,
+      desc = "Go to implementations",
+      mode = "n",
+    },
+    {
+      "<leader>j",
+      function()
+        require("telescope.builtin").lsp_document_symbols()
+      end,
+      desc = "Search through document symbols",
+      mode = "n",
+    },
+    {
+      "<leader>fs",
+      function()
+        require("telescope.builtin").lsp_workspace_symbols()
+      end,
+      desc = "Search through entire workspace symbols",
+      mode = "n",
+    },
+    {
+      "<leader>fd",
+      function()
+        require("telescope.builtin").diagnostics()
+      end,
+      desc = "Search through LSP diagnostics",
+      mode = "n",
+    },
+  },
 }

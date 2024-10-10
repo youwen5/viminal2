@@ -1,5 +1,6 @@
 return {
   "lsp-progress",
+  event = "LspAttach",
   after = function()
     require("lsp-progress").setup({
       client_format = function(client_name, spinner, series_messages)
