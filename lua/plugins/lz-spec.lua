@@ -5,65 +5,10 @@ return {
   require("plugins.harpoon"),
   require("plugins.lualine"),
   require("plugins.conform"),
-  {
-    "lsp-progress",
-    after = function()
-      require("lsp-progress").setup({
-        client_format = function(client_name, spinner, series_messages)
-          if #series_messages == 0 then
-            return nil
-          end
-          return {
-            name = client_name,
-            body = spinner .. " " .. table.concat(series_messages, ", "),
-          }
-        end,
-        format = function(client_messages)
-          --- @param name string
-          --- @param msg string?
-          --- @return string
-          local function stringify(name, msg)
-            return msg and string.format("%s %s", name, msg) or name
-          end
-
-          local sign = "󰆧" -- nf-fa-gear \uf013
-          local lsp_clients = vim.lsp.get_clients()
-          local messages_map = {}
-          for _, climsg in ipairs(client_messages) do
-            messages_map[climsg.name] = climsg.body
-          end
-
-          if #lsp_clients > 0 then
-            table.sort(lsp_clients, function(a, b)
-              return a.name < b.name
-            end)
-            local builder = {}
-            for _, cli in ipairs(lsp_clients) do
-              if type(cli) == "table" and type(cli.name) == "string" and string.len(cli.name) > 0 then
-                if messages_map[cli.name] then
-                  table.insert(builder, stringify(cli.name, messages_map[cli.name]))
-                else
-                  table.insert(builder, stringify(cli.name))
-                end
-              end
-            end
-            if #builder > 0 then
-              return sign .. " " .. table.concat(builder, ", ")
-            end
-          end
-          return ""
-        end,
-      })
-    end,
-  },
+  require("plugins.lsp-progress"),
+  require("plugins.gitsigns"),
+  require("plugins.autopairs"),
   { "telescope-ui-select.nvim", priority = 70 },
-  {
-    "nvim-autopairs",
-    event = "BufEnter",
-    after = function()
-      require("nvim-autopairs").setup()
-    end,
-  },
   {
     "nvim-lspconfig",
     event = "BufEnter",
@@ -111,6 +56,7 @@ return {
   },
   {
     "typst-preview",
+    filetypes = { "*.typ" },
     after = function()
       require("typst-preview").setup({
         dependencies_bin = {
@@ -218,66 +164,6 @@ return {
     event = "BufEnter",
     after = function()
       require("mini.hipatterns").setup()
-    end,
-  },
-  {
-    "gitsigns.nvim",
-    event = "BufEnter",
-    after = function()
-      require("gitsigns").setup({
-        on_attach = function(bufnr)
-          local gitsigns = require("gitsigns")
-
-          local function map(mode, l, r, opts)
-            opts = opts or {}
-            opts.buffer = bufnr
-            vim.keymap.set(mode, l, r, opts)
-          end
-
-          -- Navigation
-          map("n", "]c", function()
-            if vim.wo.diff then
-              vim.cmd.normal({ "]c", bang = true })
-            else
-              gitsigns.nav_hunk("next")
-            end
-          end)
-
-          map("n", "[c", function()
-            if vim.wo.diff then
-              vim.cmd.normal({ "[c", bang = true })
-            else
-              gitsigns.nav_hunk("prev")
-            end
-          end)
-
-          -- Actions
-          map("n", "<leader>gs", gitsigns.stage_hunk)
-          map("n", "<leader>gr", gitsigns.reset_hunk)
-          map("v", "<leader>gs", function()
-            gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-          end)
-          map("v", "<leader>gr", function()
-            gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-          end)
-          map("n", "<leader>gS", gitsigns.stage_buffer)
-          map("n", "<leader>gu", gitsigns.undo_stage_hunk)
-          map("n", "<leader>gR", gitsigns.reset_buffer)
-          map("n", "<leader>gp", gitsigns.preview_hunk)
-          map("n", "<leader>gb", function()
-            gitsigns.blame_line({ full = true })
-          end)
-          map("n", "<leader>gb", gitsigns.toggle_current_line_blame)
-          map("n", "<leader>gd", gitsigns.diffthis)
-          map("n", "<leader>gD", function()
-            gitsigns.diffthis("~")
-          end)
-          map("n", "<leader>gtd", gitsigns.toggle_deleted)
-
-          -- Text object
-          map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
-        end,
-      })
     end,
   },
   {
