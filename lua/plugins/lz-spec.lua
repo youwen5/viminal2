@@ -189,28 +189,17 @@ return {
   {
     "barbecue.nvim",
     event = "BufEnter",
-    after = function()
-      -- triggers CursorHold event faster
-      vim.opt.updatetime = 200
-
-      require("barbecue").setup({
-        create_autocmd = false, -- prevent barbecue from updating itself automatically
-      })
-
-      vim.api.nvim_create_autocmd({
-        "WinResized",
-        "BufWinEnter",
-        "CursorHold",
-        "InsertLeave",
-
-        -- include this if you have set `show_modified` to `true`
-        "BufModifiedSet",
-      }, {
-        group = vim.api.nvim_create_augroup("barbecue.updater", {}),
-        callback = function()
-          require("barbecue.ui").update()
+    keys = {
+      {
+        "<C-j>",
+        function()
+          require("barbecue.ui").navigate(-1)
         end,
-      })
+        desc = "Go to last treesitter node",
+      },
+    },
+    after = function()
+      require("barbecue").setup()
     end,
   },
   {
