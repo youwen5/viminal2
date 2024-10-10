@@ -1,0 +1,2 @@
+-- Non-exhaustive collection of keymaps. I've decided it's more sane to place
+-- plugin specific maps in their respective setup scripts
