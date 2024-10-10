@@ -151,6 +151,12 @@
               lua-language-server
               nixd
               nixfmt-rfc-style
+			  nodePackages_latest.prettier
+			  taplo
+			  typstyle
+			  rustfmt
+			  black
+			  stylua
             ];
           };
 
@@ -226,6 +232,7 @@
               diffview-nvim
               barbecue-nvim
 			  undotree
+			  conform-nvim
             ];
           };
 
