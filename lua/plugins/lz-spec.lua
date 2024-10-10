@@ -229,4 +229,13 @@ return {
       })
     end,
   },
+  {
+    "crates.nvim",
+    filetypes = "*.toml",
+    after = function()
+      require("crates").setup()
+    end,
+  },
+  { "rustaceanvim" },
+  { "haskell-tools.nvim" },
 }

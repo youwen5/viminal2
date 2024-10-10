@@ -168,6 +168,9 @@
               undotree
               conform-nvim
               neocord
+              rustaceanvim
+              crates-nvim
+              haskell-tools-nvim
             ];
           };
 
