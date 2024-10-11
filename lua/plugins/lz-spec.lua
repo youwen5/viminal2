@@ -13,6 +13,7 @@ return {
   require("plugins.toggleterm"),
   { "telescope-ui-select.nvim" },
   { "vim-wakatime" },
+  { "vim-sleuth" },
   {
     "nvim-lspconfig",
     event = "BufEnter",

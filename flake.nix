@@ -172,6 +172,7 @@
               haskell-tools-nvim
               vim-wakatime
               lsp_lines-nvim
+              vim-sleuth
             ];
           };
 

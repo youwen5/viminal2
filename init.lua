@@ -19,6 +19,14 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldmethod = "expr"
 vim.opt.foldenable = false
 
+vim.opt.signcolumn = "yes"
+vim.opt.updatetime = 250
+
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+
+vim.opt.scrolloff = 10
+
 vim.cmd.colorscheme("rose-pine")
 
 require("nvim-treesitter.configs").setup({
