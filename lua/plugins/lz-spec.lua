@@ -229,7 +229,7 @@ return {
   },
   {
     "crates.nvim",
-    filetypes = "*.toml",
+    event = "BufRead Cargo.toml",
     after = function()
       require("crates").setup()
     end,
