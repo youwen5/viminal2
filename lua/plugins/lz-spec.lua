@@ -12,6 +12,7 @@ return {
   require("plugins.render-markdown"),
   require("plugins.toggleterm"),
   { "telescope-ui-select.nvim" },
+  { "vim-wakatime" },
   {
     "nvim-lspconfig",
     event = "BufEnter",
