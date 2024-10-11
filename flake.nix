@@ -1,5 +1,5 @@
 {
-  description = "A Lua-natic's neovim flake, with extra cats! nixCats!";
+  description = "A Neovim configuration for the stubborn Nixian hacker";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";

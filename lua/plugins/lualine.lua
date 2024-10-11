@@ -23,12 +23,15 @@ return {
       sections = {
         lualine_a = { "branch" },
         lualine_b = {
+          "filetype",
+        },
+        lualine_c = {
+          "progress",
           function()
             require("lz.n").trigger_load("lsp-progress")
             return require("lsp-progress").progress()
           end,
         },
-        lualine_c = { "progress", "filetype" },
         lualine_x = { "encoding", "fileformat" },
         lualine_y = { "diff", "diagnostics" },
         lualine_z = { "location" },
