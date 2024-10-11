@@ -171,6 +171,7 @@
               rustaceanvim
               crates-nvim
               haskell-tools-nvim
+              vim-sleuth
             ];
           };
 
