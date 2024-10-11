@@ -139,7 +139,6 @@
             general = with pkgs.vimPlugins; [
               nvim-autopairs
               nvim-lspconfig
-              intellitab-nvim
               which-key-nvim
               telescope-nvim
               markdown-preview-nvim

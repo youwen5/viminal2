@@ -1,5 +1,5 @@
--- Non-exhaustive collection of keymaps. I've decided it's more sane to place
--- plugin specific maps in their respective setup scripts
+-- Mostly remaps of existing keys. New keybinds are generally defined directly
+-- in their plugin specs for `lz.n`
 
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>", "<nop>")
@@ -21,8 +21,6 @@ vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "yank to clipboard" })
 vim.keymap.set({ "n", "v" }, "<leader>Y", '"+Y', { desc = "yank rest of line to clipboard" })
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "put after cursor from clipboard" })
 vim.keymap.set({ "n", "v" }, "<leader>P", '"+P', { desc = "put before cursor from clipboard" })
-
-vim.keymap.set("i", "<Tab>", require("scripts.intellitab").indent)
 
 -- Allow increment/decrement repeatedly in visual
 vim.keymap.set("v", "<C-a>", "<C-a>gv")
