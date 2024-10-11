@@ -15,9 +15,7 @@ return {
   {
     "nvim-lspconfig",
     event = "BufEnter",
-    after = function()
-      require("lsp")
-    end,
+    after = require("lsp"),
   },
   {
     "which-key.nvim",
