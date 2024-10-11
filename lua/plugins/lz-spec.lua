@@ -237,4 +237,15 @@ return {
   },
   { "rustaceanvim" },
   { "haskell-tools.nvim" },
+  {
+    "lsp_lines.nvim",
+    event = "LspAttach",
+    after = function()
+      require("lsp_lines").setup()
+      vim.diagnostic.config({
+        virtual_text = false,
+        virtual_lines = { only_current_line = true },
+      })
+    end,
+  },
 }
