@@ -1,4 +1,6 @@
-return function()
+local M = {}
+
+M.setup = function()
   local symbols = { Error = "󰅙", Info = "󰋼", Hint = "󰌵", Warn = "" }
 
   for name, icon in pairs(symbols) do
@@ -35,3 +37,5 @@ return function()
   lspconfig.marksman.setup({})
   lspconfig.tinymist.setup({})
 end
+
+return M

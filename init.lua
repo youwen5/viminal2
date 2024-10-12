@@ -1,7 +1,7 @@
 require("keymaps")
 require("plugins")
 
-require("scripts.autoroot")
+require("scripts.autoroot").setup()
 
 vim.opt.relativenumber = true
 vim.opt.number = true
