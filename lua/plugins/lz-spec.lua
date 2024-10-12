@@ -233,7 +233,7 @@ return {
     "crates.nvim",
     event = "BufRead Cargo.toml",
     after = function()
-      require("crates").setup()
+      require("crates").setup({})
     end,
   },
   { "rustaceanvim" },
