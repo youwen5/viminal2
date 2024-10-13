@@ -33,7 +33,30 @@ M.setup = function()
     },
   })
 
-  lspconfig.nixd.setup({})
+  lspconfig.nixd.setup({
+    nixd = {
+      nixpkgs = {
+        expr = [[import (builtins.getFlake ")]] .. nixCats("nixdExtras.nixpkgs") .. [[") { }   ]],
+      },
+      -- options = {
+      --   nixos = {
+      --     expr = [[(builtins.getFlake "]]
+      --       .. nixCats("nixdExtras.flake-path")
+      --       .. [[").nixosConfigurations."]]
+      --       .. nixCats("nixdExtras.systemCFGname")
+      --       .. [[".options]],
+      --   },
+      --   -- (builtins.getFlake "<path_to_system_flake>").homeConfigurations."<name>".options
+      --   ["home-manager"] = {
+      --     expr = [[(builtins.getFlake "]]
+      --       .. nixCats("nixdExtras.flake-path")
+      --       .. [[").homeConfigurations."]]
+      --       .. nixCats("nixdExtras.homeCFGname")
+      --       .. [[".options]],
+      --   },
+      -- },
+    },
+  })
   lspconfig.marksman.setup({})
   lspconfig.tinymist.setup({})
 end

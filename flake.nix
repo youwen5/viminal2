@@ -203,6 +203,11 @@
                 websocat = "${pkgs.websocat}/bin/websocat";
                 tinymist = "${pkgs.tinymist}/bin/tinymist";
               };
+              nixdExtras = {
+                nixpkgs = inputs.nixpkgs.outPath;
+                flake-path = inputs.self.outPath;
+                system = pkgs.system;
+              };
             };
           };
       };
