@@ -39,7 +39,7 @@ return {
     after = function()
       require("typst-preview").setup({
         dependencies_bin = {
-          ["typst-preview"] = nixCats("bin.tinymist"),
+          ["tinymist"] = nixCats("bin.tinymist"),
           ["websocat"] = nixCats("bin.websocat"),
         },
       })
