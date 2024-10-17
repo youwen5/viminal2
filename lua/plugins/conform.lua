@@ -60,6 +60,8 @@ return {
         toml = { "taplo", stop_after_first = true },
         yaml = { "prettierd", "prettier", stop_after_first = true },
         typst = { "typstyle" },
+        tsx = { "prettier" },
+        svelte = { "prettier" },
       },
     })
 

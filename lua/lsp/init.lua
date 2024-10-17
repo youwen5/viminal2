@@ -59,6 +59,8 @@ M.setup = function()
   })
   lspconfig.marksman.setup({})
   lspconfig.tinymist.setup({})
+  lspconfig.svelte.setup({})
+  lspconfig.tailwindcss.setup({})
 end
 
 return M
