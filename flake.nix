@@ -179,6 +179,7 @@
               vim-wakatime
               lsp_lines-nvim
               vim-sleuth
+              typescript-tools-nvim
             ];
           };
 

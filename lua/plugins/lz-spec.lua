@@ -238,6 +238,7 @@ return {
   },
   { "rustaceanvim" },
   { "haskell-tools.nvim" },
+  { "typescript-tools.nvim" },
   {
     "lsp_lines.nvim",
     event = "LspAttach",
