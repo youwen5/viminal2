@@ -238,7 +238,13 @@ return {
   },
   { "rustaceanvim" },
   { "haskell-tools.nvim" },
-  { "typescript-tools.nvim" },
+  {
+    "typescript-tools.nvim",
+    filetypes = { "typescriptreact", "typescript", "javascript", "svelte", "javascriptreact" },
+    after = function()
+      require("typescript-tools").setup()
+    end,
+  },
   {
     "lsp_lines.nvim",
     event = "LspAttach",
