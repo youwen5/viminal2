@@ -242,6 +242,7 @@ return {
     "typescript-tools.nvim",
     filetypes = { "typescriptreact", "typescript", "javascript", "svelte", "javascriptreact" },
     after = function()
+      require("lz.n").trigger_load("nvim-lspconfig")
       require("typescript-tools").setup()
     end,
   },
