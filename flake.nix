@@ -8,6 +8,12 @@
     blink-cmp = {
       url = "github:Saghen/blink.cmp";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.fenix.follows = "fenix";
+    };
+
+    fenix = {
+      url = "github:andresilva/fenix/fix-platforms";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     plugins-typst-preview = {
