@@ -190,15 +190,6 @@ return {
   {
     "barbecue.nvim",
     event = "BufEnter",
-    keys = {
-      {
-        "<C-j>",
-        function()
-          require("barbecue.ui").navigate(-1)
-        end,
-        desc = "Go to last treesitter node",
-      },
-    },
     after = function()
       require("barbecue").setup()
     end,
