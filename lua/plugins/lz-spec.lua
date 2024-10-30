@@ -11,8 +11,7 @@ return {
   require("plugins.trouble"),
   require("plugins.render-markdown"),
   require("plugins.toggleterm"),
-  { "telescope-ui-select.nvim" },
-  { "vim-wakatime" },
+  require("plugins.texpresso")({ "telescope-ui-select.nvim" }),
   { "vim-sleuth" },
   {
     "nvim-lspconfig",
