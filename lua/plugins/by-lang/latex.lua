@@ -3,6 +3,6 @@ return {
   filetypes = { "*.tex" },
   cmd = { "TeXpresso" },
   after = function()
-    require("texpresso").texpresso_path = nixCats("bin.texpresso")
+    -- require("texpresso").texpresso_path = nixCats("bin.texpresso")
   end,
 }
