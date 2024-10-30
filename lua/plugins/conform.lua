@@ -64,6 +64,7 @@ return {
         yaml = { "prettierd", "prettier", stop_after_first = true },
         typst = { "typstyle" },
         svelte = { "prettier" },
+        tex = { "latexindent" },
       },
     })
 

@@ -1,0 +1,31 @@
+INFO:  latexindent.pl version 3.23.6, 2024-01-17, a script to indent .tex files
+       latexindent.pl lives here: /nix/store/dg0j7w9wrsdrrrnzyr4akibajm2qfixs-latexindent-3.23.6-tex/scripts/latexindent/
+       Tue Oct 29 23:04:51 2024
+       Reading input from STDIN
+INFO:  Processing switches:
+INFO:  Directory for backup files and indent.log:
+       .
+INFO:  Perl modules are being loaded from the following directories:
+       /nix/store/mnnp3qlmkwgzl3lbnz7qlaqddwjjwa7v-perl-5.40.0/lib/perl5/5.40.0/FindBin.pm
+       /nix/store/084zikfymlc0xadd0r0da714cf48p0ri-perl-5.40.0-env/lib/perl5/site_perl/5.40.0/YAML/Tiny.pm
+       /nix/store/mnnp3qlmkwgzl3lbnz7qlaqddwjjwa7v-perl-5.40.0/lib/perl5/5.40.0/File/Copy.pm
+       /nix/store/mnnp3qlmkwgzl3lbnz7qlaqddwjjwa7v-perl-5.40.0/lib/perl5/5.40.0/File/Basename.pm
+       /nix/store/mnnp3qlmkwgzl3lbnz7qlaqddwjjwa7v-perl-5.40.0/lib/perl5/5.40.0/Getopt/Long.pm
+       /nix/store/084zikfymlc0xadd0r0da714cf48p0ri-perl-5.40.0-env/lib/perl5/site_perl/5.40.0/File/HomeDir.pm
+INFO:  LatexIndent perl modules are being loaded from, for example:
+       /nix/store/dg0j7w9wrsdrrrnzyr4akibajm2qfixs-latexindent-3.23.6-tex/scripts/latexindent/LatexIndent/Document.pm
+INFO:  YAML settings read: defaultSettings.yaml
+       Reading defaultSettings.yaml from /nix/store/dg0j7w9wrsdrrrnzyr4akibajm2qfixs-latexindent-3.23.6-tex/scripts/latexindent/defaultSettings.yaml
+INFO:  YAML reading settings
+       Home directory is /home/youwen
+       latexindent.pl didn't find indentconfig.yaml or .indentconfig.yaml
+       see all possible locations: https://latexindentpl.readthedocs.io/en/latest/sec-appendices.html#indentconfig-options)
+INFO:  Phase 1: searching for objects
+INFO:  Phase 2: finding surrounding indentation
+INFO:  Phase 3: indenting objects
+INFO:  Phase 4: final indentation check
+INFO:  Output routine:
+       Not outputting to file; see -w and -o switches for more options.
+       --------------
+INFO:  Please direct all communication/issues to:
+        https://github.com/cmhughes/latexindent.pl

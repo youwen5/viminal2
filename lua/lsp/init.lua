@@ -61,6 +61,7 @@ M.setup = function()
   lspconfig.tinymist.setup({})
   lspconfig.svelte.setup({})
   lspconfig.tailwindcss.setup({})
+  lspconfig.texlab.setup({})
 end
 
 return M
