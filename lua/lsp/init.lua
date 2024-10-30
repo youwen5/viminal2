@@ -67,6 +67,7 @@ M.setup = function()
   lspconfig.textlsp.setup({})
   lspconfig.fortls.setup({})
   lspconfig.asm_lsp.setup({})
+  lspconfig.texlab.setup({})
 end
 
 return M
