@@ -123,6 +123,7 @@
                   bash
                   make
                   gitcommit
+                  jsonc
                 ])
               ))
             ];
