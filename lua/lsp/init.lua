@@ -61,6 +61,12 @@ M.setup = function()
   lspconfig.tinymist.setup({})
   lspconfig.svelte.setup({})
   lspconfig.tailwindcss.setup({})
+  lspconfig.arduino_language_server.setup({})
+  lspconfig.clangd.setup({})
+  lspconfig.java_language_server.setup({})
+  lspconfig.textlsp.setup({})
+  lspconfig.fortls.setup({})
+  lspconfig.asm_lsp.setup({})
   lspconfig.texlab.setup({})
 end
 
