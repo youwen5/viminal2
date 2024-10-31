@@ -6,19 +6,30 @@ return {
       -- for keymap, all values may be string | string[]
       -- use an empty table to disable a keymap
       keymap = {
-        show = "<C-space>",
-        hide = "<C-e>",
-        accept = "<Tab>",
-        select_prev = { "<Up>", "<C-p>" },
-        select_next = { "<Down>", "<C-n>" },
+        ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+        ["<C-e>"] = { "hide" },
 
-        show_documentation = {},
-        hide_documentation = {},
-        scroll_documentation_up = "<C-b>",
-        scroll_documentation_down = "<C-f>",
+        ["<Tab>"] = {
+          function(cmp)
+            if cmp.is_in_snippet() then
+              return cmp.accept()
+            else
+              return cmp.select_and_accept()
+            end
+          end,
+          "snippet_forward",
+          require("scripts.intellitab").indent,
+          "fallback",
+        },
+        ["<S-Tab>"] = { "snippet_backward", "fallback" },
 
-        snippet_forward = "<Tab>",
-        snippet_backward = "<S-Tab>",
+        ["<Up>"] = { "select_prev", "fallback" },
+        ["<Down>"] = { "select_next", "fallback" },
+        ["<C-p>"] = { "select_prev", "fallback" },
+        ["<C-n>"] = { "select_next", "fallback" },
+
+        ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+        ["<C-f>"] = { "scroll_documentation_down", "fallback" },
       },
 
       fuzzy = {
@@ -27,8 +38,6 @@ return {
         -- proximity bonus boosts the score of items with a value in the buffer
         use_proximity = true,
         max_items = 200,
-        -- controls which sorts to use and in which order, these three are currently the only allowed options
-        sorts = { "label", "kind", "score" },
 
         prebuiltBinaries = {
           -- Whether or not to automatically download a prebuilt binary from github. If this is set to `false`

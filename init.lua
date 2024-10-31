@@ -27,6 +27,10 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 vim.opt.scrolloff = 10
 
+if os.getenv("TERM") == "xterm-kitty" then
+  require("scripts.chameleon").setup()
+end
+
 vim.cmd.colorscheme("rose-pine")
 
 require("nvim-treesitter.configs").setup({
@@ -69,3 +73,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank({ higroup = "Visual", timeout = 300 })
   end,
 })
+
+-- vim.keymap.set("i", "<Tab>", require("scripts.intellitab").indent)
