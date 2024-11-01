@@ -53,6 +53,10 @@ The keybinds have gotten a lot more idiosyncratic. Instead of focusing on
 mnemonic keys that can be easily committed to memory, highly efficient ones
 were chosen instead.
 
+## Todo
+
+- Try rewriting config in Fennel.
+
 ## License
 
 Feel free to copy any code from here or use it as an example. It's [public
