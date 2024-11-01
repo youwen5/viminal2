@@ -29,6 +29,7 @@ vim.opt.scrolloff = 10
 
 if os.getenv("TERM") == "xterm-kitty" then
   require("scripts.chameleon").setup()
+  require("scripts.kitty-padding").setup()
 end
 
 vim.cmd.colorscheme("rose-pine")
