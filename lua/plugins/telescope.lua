@@ -52,7 +52,7 @@ return {
       mode = "n",
     },
     {
-      "<leader>gd",
+      "gd",
       function()
         require("telescope.builtin").lsp_definitions()
       end,
@@ -60,7 +60,7 @@ return {
       mode = "n",
     },
     {
-      "<leader>gi",
+      "gi",
       function()
         require("telescope.builtin").lsp_implementations()
       end,
