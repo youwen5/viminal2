@@ -58,7 +58,9 @@ M.setup = function()
     },
   })
   lspconfig.marksman.setup({})
-  lspconfig.tinymist.setup({})
+  lspconfig.tinymist.setup({
+    offset_encoding = "utf-8",
+  })
   lspconfig.svelte.setup({})
   lspconfig.tailwindcss.setup({})
   lspconfig.texlab.setup({})
