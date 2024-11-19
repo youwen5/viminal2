@@ -5,11 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
-    blink-cmp = {
-      url = "github:Saghen/blink.cmp";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     plugins-typst-preview = {
       url = "github:chomosuke/typst-preview.nvim";
       flake = false;
@@ -133,7 +128,6 @@
           # lz.n (not necessarily lazy loaded)
           optionalPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [
-              inputs.blink-cmp.packages.${pkgs.system}.default
               typst-preview
               lsp-progress
             ];
@@ -176,6 +170,7 @@
               vim-sleuth
               typescript-tools-nvim
               texpresso-vim
+              blink-cmp
             ];
           };
 
