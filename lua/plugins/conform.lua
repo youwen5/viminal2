@@ -65,6 +65,8 @@ return {
         typst = { "typstyle" },
         svelte = { "prettier" },
         tex = { "latexindent" },
+        cpp = { "clang-format", lsp_format = "fallback" },
+        c = { "clang-format", lsp_format = "fallback" },
       },
     })
 
