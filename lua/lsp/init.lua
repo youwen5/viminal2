@@ -64,6 +64,7 @@ M.setup = function()
   lspconfig.svelte.setup({})
   lspconfig.tailwindcss.setup({})
   lspconfig.texlab.setup({})
+  lspconfig.clangd.setup({})
 end
 
 return M
