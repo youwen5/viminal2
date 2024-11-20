@@ -171,7 +171,7 @@
               typescript-tools-nvim
               texpresso-vim
               blink-cmp
-	      clangd_extensions-nvim
+              clangd_extensions-nvim
             ];
           };
 
