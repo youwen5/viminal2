@@ -51,7 +51,7 @@ return {
       formatters_by_ft = {
         lua = { "stylua" },
         python = { "black" },
-        rust = { "rustfmt" },
+        rust = { "rustfmt", lsp_format = "fallback" },
         javascript = { "prettierd", "prettier", stop_after_first = true },
         typescript = { "prettierd", "prettier", stop_after_first = true },
         typescriptreact = { "prettierd", "prettier", stop_after_first = true },
@@ -63,7 +63,7 @@ return {
         toml = { "taplo", stop_after_first = true },
         yaml = { "prettierd", "prettier", stop_after_first = true },
         typst = { "typstyle" },
-        svelte = { "prettier" },
+        svelte = { "prettier", lsp_format = "fallback" },
         tex = { "latexindent" },
         cpp = { "clang-format", lsp_format = "fallback" },
         c = { "clang-format", lsp_format = "fallback" },
