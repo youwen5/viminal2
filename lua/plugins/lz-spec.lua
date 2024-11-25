@@ -11,12 +11,9 @@ return {
   require("plugins.trouble"),
   require("plugins.render-markdown"),
   require("plugins.toggleterm"),
-
-  -- require("plugins.texpresso")
-  ({ "telescope-ui-select.nvim" }),
+  { "telescope-ui-select.nvim" },
   require("plugins.by-lang.latex"),
   { "telescope-ui-select.nvim" },
-  { "vim-wakatime" },
   { "vim-sleuth" },
   {
     "nvim-lspconfig",
@@ -47,13 +44,6 @@ return {
           ["websocat"] = nixCats("bin.websocat"),
         },
       })
-    end,
-  },
-  {
-    "mini.ai",
-    event = "BufEnter",
-    after = function()
-      require("mini.ai").setup()
     end,
   },
   {
