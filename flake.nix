@@ -14,6 +14,11 @@
       url = "github:linrongbin16/lsp-progress.nvim";
       flake = false;
     };
+
+    plugins-live-share = {
+      url = "github:azratul/live-share.nvim";
+      flake = false;
+    };
   };
   outputs =
     {
@@ -130,6 +135,7 @@
             gitPlugins = with pkgs.neovimPlugins; [
               typst-preview
               lsp-progress
+              live-share
             ];
             general = with pkgs.vimPlugins; [
               nvim-autopairs

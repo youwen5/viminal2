@@ -31,6 +31,22 @@
         "type": "github"
       }
     },
+    "plugins-live-share": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1729253766,
+        "narHash": "sha256-fUYFdeP+T+KwGpvm0eh5GcAS35ZU5f0N9A/JsqBgHGA=",
+        "owner": "azratul",
+        "repo": "live-share.nvim",
+        "rev": "bf5e8e087c368aae0325a09d1ea43f2a08f5e9aa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "azratul",
+        "repo": "live-share.nvim",
+        "type": "github"
+      }
+    },
     "plugins-lsp-progress": {
       "flake": false,
       "locked": {
@@ -67,6 +83,7 @@
       "inputs": {
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",
+        "plugins-live-share": "plugins-live-share",
         "plugins-lsp-progress": "plugins-lsp-progress",
         "plugins-typst-preview": "plugins-typst-preview"
       }
