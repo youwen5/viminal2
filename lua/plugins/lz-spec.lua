@@ -253,7 +253,19 @@ return {
   {
     "tailwind-tools.nvim",
     after = function()
-      require("tailwind-tools").setup({})
+      local lz = require("lz.n")
+
+      lz.trigger_load("telescope.nvim")
+      lz.trigger_load("nvim-lspconfig")
+
+      require("tailwind-tools").setup({
+        conceal = {
+          enabled = true,
+        },
+        document_color = {
+          enabled = true,
+        },
+      })
     end,
   },
 }
