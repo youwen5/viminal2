@@ -178,6 +178,7 @@
               texpresso-vim
               blink-cmp
               clangd_extensions-nvim
+              tailwind-tools-nvim
             ];
           };
 

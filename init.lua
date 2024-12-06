@@ -75,4 +75,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
--- vim.keymap.set("i", "<Tab>", require("scripts.intellitab").indent)
+-- silence the hover 'no information available' notification
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+  silent = true,
+})

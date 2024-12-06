@@ -62,7 +62,6 @@ M.setup = function()
     offset_encoding = "utf-8",
   })
   lspconfig.svelte.setup({})
-  lspconfig.tailwindcss.setup({})
   lspconfig.texlab.setup({})
   lspconfig.clangd.setup({})
 end

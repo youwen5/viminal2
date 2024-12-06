@@ -250,4 +250,10 @@ return {
       })
     end,
   },
+  {
+    "tailwind-tools.nvim",
+    after = function()
+      require("tailwind-tools").setup({})
+    end,
+  },
 }
