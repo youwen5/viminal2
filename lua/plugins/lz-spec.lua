@@ -12,7 +12,6 @@ return {
   require("plugins.render-markdown"),
   require("plugins.toggleterm"),
   require("plugins.by-lang.latex"),
-  { "telescope-ui-select.nvim" },
   { "vim-wakatime" },
   { "clangd_extensions.nvim" },
   { "vim-sleuth" },

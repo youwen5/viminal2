@@ -126,6 +126,9 @@
                   jsonc
                 ])
               ))
+              # for some reason trigger_load still fails to load this in the
+              # proper order
+              telescope-ui-select-nvim
             ];
           };
 
@@ -147,7 +150,6 @@
               rose-pine
               nvim-web-devicons
               oil-nvim
-              telescope-ui-select-nvim
               harpoon2
               toggleterm-nvim
               trouble-nvim
