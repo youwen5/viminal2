@@ -64,6 +64,7 @@ M.setup = function()
   lspconfig.svelte.setup({})
   lspconfig.texlab.setup({})
   lspconfig.clangd.setup({})
+  lspconfig.mesonlsp.setup({})
 end
 
 return M

@@ -124,6 +124,7 @@
                   make
                   gitcommit
                   jsonc
+                  meson
                 ])
               ))
               # for some reason trigger_load still fails to load this in the
