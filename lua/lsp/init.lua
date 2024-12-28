@@ -65,6 +65,7 @@ M.setup = function()
   lspconfig.texlab.setup({})
   lspconfig.clangd.setup({})
   lspconfig.mesonlsp.setup({})
+  lspconfig.nushell.setup({})
 end
 
 return M
