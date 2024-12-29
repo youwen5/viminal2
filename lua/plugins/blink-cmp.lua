@@ -8,11 +8,15 @@ return {
     require("blink.cmp").setup({
       keymap = {
         preset = "default",
+        ["<Tab>"] = {},
+        ["<S-Tab>"] = {},
         ["<C-g>"] = {
           function()
             require("blink-cmp").show({ providers = { "ripgrep" } })
           end,
         },
+        ["<C-k>"] = { "snippet_forward", "fallback" },
+        ["<C-j>"] = { "snippet_backward", "fallback" },
       },
       appearance = {
         use_nvim_cmp_as_default = true,
