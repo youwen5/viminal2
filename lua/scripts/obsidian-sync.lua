@@ -11,4 +11,4 @@ vim.api.nvim_create_user_command("VaultSync", function()
   vim.cmd("Neogit push")
 end, {})
 
-vim.keymap.set("n", "<leader>vs", vim.cmd.VaultSync)
+vim.keymap.set("n", "<leader>os", vim.cmd.VaultSync)
