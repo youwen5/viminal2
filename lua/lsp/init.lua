@@ -18,13 +18,16 @@ M.setup = function()
           version = "LuaJIT",
         },
         diagnostics = {
-          -- Get the language server to recognize the `vim` global
-          globals = { "vim", "nixCats", "MiniBufremove" },
+          globals = { "nixCats" },
         },
-        workspace = {
-          -- Make the server aware of Neovim runtime files
-          library = vim.api.nvim_get_runtime_file("", true),
-        },
+        -- unfortunately we won't get nixCats autocomplete with this option
+        -- off, but lazydev will be much faster
+        --
+        -- workspace = {
+        --   -- Make the server aware of Neovim runtime files
+        --   library = vim.api.nvim_get_runtime_file("", true),
+        --   -- library =
+        -- },
         -- Do not send telemetry data containing a randomized but unique identifier
         telemetry = {
           enable = false,

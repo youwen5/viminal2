@@ -19,10 +19,18 @@ return {
       },
       sources = {
         default = { "lsp", "path", "snippets", "buffer" },
+        per_filetype = {
+          lua = { "lazydev", "lsp", "path", "snippets", "buffer" },
+        },
         providers = {
           ripgrep = {
             module = "blink-ripgrep",
             name = "Ripgrep",
+          },
+          lazydev = {
+            name = "LazyDev",
+            module = "lazydev.integrations.blink",
+            score_offset = 100,
           },
         },
       },

@@ -73,6 +73,10 @@ return {
         -- handled by statusline
         lsp_progress = { enable = false },
       })
+
+      MiniNotify.make_notify({
+        ERROR = { duration = 6000 },
+      })
     end,
   },
   {
@@ -264,4 +268,11 @@ return {
     end,
   },
   { "blink-ripgrep", lazy = true },
+  {
+    "lazydev.nvim",
+    filetypes = { "lua" },
+    after = function()
+      require("lazydev").setup()
+    end,
+  },
 }

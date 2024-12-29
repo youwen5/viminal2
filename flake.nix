@@ -174,6 +174,7 @@
               tailwind-tools-nvim
               typst-preview-nvim
               lsp-progress-nvim
+              lazydev-nvim
             ];
           };
 
