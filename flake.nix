@@ -148,11 +148,11 @@
               mini-ai
               mini-hipatterns
               mini-surround
-              mini-notify
               mini-starter
               mini-trailspace
               cellular-automaton-nvim
               indent-blankline-nvim
+              fidget-nvim
               mini-bufremove
               neogit
               gitsigns-nvim

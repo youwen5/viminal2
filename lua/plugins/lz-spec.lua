@@ -67,15 +67,17 @@ return {
     end,
   },
   {
-    "mini.notify",
+    "fidget.nvim",
     after = function()
-      require("mini.notify").setup({
-        -- handled by statusline
-        lsp_progress = { enable = false },
-      })
-
-      MiniNotify.make_notify({
-        ERROR = { duration = 6000 },
+      require("fidget").setup({
+        notification = {
+          override_vim_notify = true,
+          window = {
+            border = "rounded",
+            x_padding = 1,
+            y_padding = 2,
+          },
+        },
       })
     end,
   },
