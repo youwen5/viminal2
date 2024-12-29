@@ -175,6 +175,7 @@
               lazydev-nvim
               plenary-nvim
               obsidian-nvim
+              blink-compat
 
               # colorschemes
               rose-pine

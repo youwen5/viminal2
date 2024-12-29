@@ -36,10 +36,12 @@ return {
     local workspaces = get_workspaces()
 
     if #workspaces > 0 then
-      require("obsidian").setup({
+      local opts = {
         ui = { enable = false },
         workspaces = workspaces,
-      })
+        completion = { nvim_cmp = false },
+      }
+      require("obsidian").setup(opts)
     end
   end,
 }

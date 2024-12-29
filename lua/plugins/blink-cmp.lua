@@ -3,6 +3,7 @@ return {
   event = "BufEnter",
   after = function()
     require("lz.n").trigger_load("blink-ripgrep")
+    require("lz.n").trigger_load("blink.compat")
 
     require("blink.cmp").setup({
       keymap = {
@@ -21,7 +22,7 @@ return {
         default = { "lsp", "path", "snippets", "buffer" },
         per_filetype = {
           lua = { "lazydev", "lsp", "path", "snippets", "buffer" },
-          markdown = { "lsp", "path", "snippets", "buffer", "markdown" },
+          markdown = { "lsp", "snippets", "obsidian", "obsidian_new", "obsidian_tags", "path", "buffer", "markdown" },
         },
         providers = {
           ripgrep = {
@@ -34,6 +35,18 @@ return {
             score_offset = 100,
           },
           markdown = { name = "RenderMarkdown", module = "render-markdown.integ.blink" },
+          obsidian = {
+            name = "obsidian",
+            module = "blink.compat.source",
+          },
+          obsidian_new = {
+            name = "obsidian_new",
+            module = "blink.compat.source",
+          },
+          obsidian_tags = {
+            name = "obsidian_tags",
+            module = "blink.compat.source",
+          },
         },
       },
       completion = {

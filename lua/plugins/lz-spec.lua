@@ -231,6 +231,7 @@ return {
     end,
   },
   { "blink-ripgrep", lazy = true },
+  { "blink.compat", lazy = true },
   {
     "lazydev.nvim",
     filetypes = { "lua" },
