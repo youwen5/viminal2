@@ -21,6 +21,7 @@ return {
         default = { "lsp", "path", "snippets", "buffer" },
         per_filetype = {
           lua = { "lazydev", "lsp", "path", "snippets", "buffer" },
+          markdown = { "lsp", "path", "snippets", "buffer", "markdown" },
         },
         providers = {
           ripgrep = {
@@ -32,6 +33,7 @@ return {
             module = "lazydev.integrations.blink",
             score_offset = 100,
           },
+          markdown = { name = "RenderMarkdown", module = "render-markdown.integ.blink" },
         },
       },
       completion = {
