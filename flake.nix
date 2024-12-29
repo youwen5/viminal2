@@ -5,18 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
-    plugins-typst-preview = {
-      url = "github:chomosuke/typst-preview.nvim";
-      flake = false;
-    };
-
-    plugins-lsp-progress = {
-      url = "github:linrongbin16/lsp-progress.nvim";
-      flake = false;
-    };
-
-    plugins-live-share = {
-      url = "github:azratul/live-share.nvim";
+    plugins-blink-ripgrep = {
+      url = "github:mikavilpas/blink-ripgrep.nvim";
       flake = false;
     };
   };
@@ -139,9 +129,7 @@
           # lz.n (not necessarily lazy loaded)
           optionalPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [
-              typst-preview
-              lsp-progress
-              live-share
+              blink-ripgrep
             ];
             general = with pkgs.vimPlugins; [
               nvim-autopairs
@@ -184,6 +172,8 @@
               blink-cmp
               clangd_extensions-nvim
               tailwind-tools-nvim
+              typst-preview-nvim
+              lsp-progress-nvim
             ];
           };
 

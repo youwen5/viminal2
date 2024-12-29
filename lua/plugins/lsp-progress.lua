@@ -1,5 +1,5 @@
 return {
-  "lsp-progress",
+  "lsp-progress.nvim",
   event = "LspAttach",
   after = function()
     require("lsp-progress").setup({

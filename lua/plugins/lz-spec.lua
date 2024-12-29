@@ -35,7 +35,7 @@ return {
     filetypes = { "markdown" },
   },
   {
-    "typst-preview",
+    "typst-preview.nvim",
     filetypes = { "*.typ" },
     after = function()
       require("typst-preview").setup({
@@ -258,13 +258,10 @@ return {
       lz.trigger_load("nvim-lspconfig")
 
       require("tailwind-tools").setup({
-        conceal = {
-          enabled = true,
-        },
-        document_color = {
-          enabled = true,
-        },
+        conceal = { enabled = true },
+        document_color = { enabled = true },
       })
     end,
   },
+  { "blink-ripgrep", lazy = true },
 }
