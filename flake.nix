@@ -122,6 +122,10 @@
               # for some reason trigger_load still fails to load this in the
               # proper order
               telescope-ui-select-nvim
+
+              # colorschemes
+              rose-pine
+              oxocarbon-nvim
             ];
           };
 
@@ -138,7 +142,6 @@
               telescope-nvim
               markdown-preview-nvim
               render-markdown-nvim
-              rose-pine
               nvim-web-devicons
               oil-nvim
               harpoon2

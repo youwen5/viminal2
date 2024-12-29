@@ -30,7 +30,6 @@ return {
     end,
   },
   { "nvim-web-devicons" },
-  { "rose-pine", priority = 100 },
   {
     "markdown-preview.nvim",
     filetypes = { "markdown" },
