@@ -237,10 +237,17 @@
         devShells = {
           default = pkgs.mkShell {
             name = defaultPackageName;
-            packages = [ defaultPackage ] ++ (with pkgs; [ lua-language-server ]);
+            packages =
+              [ defaultPackage ]
+              ++ (with pkgs; [
+                lua-language-server
+                nixfmt-rfc-style
+                stylua
+              ]);
           };
         };
 
+        formatter = pkgs.treefmt;
       }
     )
     // {
