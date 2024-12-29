@@ -148,7 +148,6 @@
               mini-hipatterns
               mini-surround
               mini-starter
-              mini-trailspace
               cellular-automaton-nvim
               indent-blankline-nvim
               fidget-nvim

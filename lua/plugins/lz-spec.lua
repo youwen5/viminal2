@@ -83,13 +83,6 @@ return {
     end,
   },
   {
-    "mini.trailspace",
-    event = "BufEnter",
-    after = function()
-      require("mini.trailspace").setup()
-    end,
-  },
-  {
     "cellular-automaton.nvim",
     cmd = "CellularAutomaton",
     keys = {
