@@ -156,7 +156,6 @@
               mini-bufremove
               neogit
               gitsigns-nvim
-              diffview-nvim
               barbecue-nvim
               undotree
               conform-nvim

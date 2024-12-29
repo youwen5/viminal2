@@ -12,6 +12,7 @@ return {
   require("plugins.render-markdown"),
   require("plugins.toggleterm"),
   require("plugins.by-lang.latex"),
+  require("plugins.neogit"),
   { "vim-wakatime" },
   { "clangd_extensions.nvim" },
   { "vim-sleuth" },
@@ -153,46 +154,6 @@ return {
     after = function()
       require("mini.hipatterns").setup()
     end,
-  },
-  {
-    "neogit",
-    cmd = "Neogit",
-    keys = {
-      {
-        "<leader>gg",
-        function()
-          vim.cmd.Neogit()
-        end,
-        desc = "Open neogit",
-        mode = "n",
-      },
-      {
-        "<leader>gc",
-        function()
-          vim.cmd.Neogit("kind=floating commit")
-        end,
-        desc = "Open neogit commit menu",
-        mode = "n",
-      },
-    },
-    before = function()
-      local lz = require("lz.n")
-      lz.trigger_load("diffview.nvim")
-      lz.trigger_load("telescope.nvim")
-    end,
-    after = function()
-      require("neogit").setup({
-        graph_style = "unicode",
-        integrations = {
-          telescope = true,
-          diffview = true,
-        },
-      })
-    end,
-  },
-  {
-    "diffiew.nvim",
-    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewRefresh" },
   },
   {
     "barbecue.nvim",
