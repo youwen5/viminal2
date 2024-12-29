@@ -173,6 +173,7 @@
               typst-preview-nvim
               lsp-progress-nvim
               lazydev-nvim
+              plenary-nvim
               obsidian-nvim
 
               # colorschemes
