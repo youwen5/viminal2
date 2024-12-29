@@ -175,6 +175,7 @@
               typst-preview-nvim
               lsp-progress-nvim
               lazydev-nvim
+              obsidian-nvim
             ];
           };
 

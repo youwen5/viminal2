@@ -277,4 +277,19 @@ return {
       require("lazydev").setup()
     end,
   },
+  {
+    "obsidian.nvim",
+    filetypes = { "markdown" },
+    after = function()
+      require("obsidian").setup({
+        ui = { enable = false },
+        workspaces = {
+          {
+            name = "vault",
+            path = "~/Documents/vaults/vault",
+          },
+        },
+      })
+    end,
+  },
 }
