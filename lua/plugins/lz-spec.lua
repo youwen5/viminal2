@@ -13,6 +13,7 @@ return {
   require("plugins.toggleterm"),
   require("plugins.by-lang.latex"),
   require("plugins.neogit"),
+  require("plugins.obsidian"),
   { "vim-wakatime" },
   { "clangd_extensions.nvim" },
   { "vim-sleuth" },
