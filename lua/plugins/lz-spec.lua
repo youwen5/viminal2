@@ -239,22 +239,11 @@ return {
     end,
   },
   {
-    "obsidian.nvim",
-    filetypes = { "markdown" },
-    after = function()
-      require("obsidian").setup({
-        ui = { enable = false },
-        workspaces = {
-          {
-            name = "vault",
-            path = "~/Documents/vaults/vault",
-          },
-          {
-            name = "alexandria",
-            path = "~/Documents/alexandria/content",
-          },
-        },
-      })
-    end,
+    "rose-pine",
+    colorscheme = { "rose-pine", "rose-pine-dawn", "rose-pine-moon", "rose-pine-main" },
+  },
+  {
+    "oxocarbon.nvim",
+    colorscheme = { "oxocarbon" },
   },
 }

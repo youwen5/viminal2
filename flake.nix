@@ -122,10 +122,6 @@
               # for some reason trigger_load still fails to load this in the
               # proper order
               telescope-ui-select-nvim
-
-              # colorschemes
-              rose-pine
-              oxocarbon-nvim
             ];
           };
 
@@ -178,6 +174,10 @@
               lsp-progress-nvim
               lazydev-nvim
               obsidian-nvim
+
+              # colorschemes
+              rose-pine
+              oxocarbon-nvim
             ];
           };
 
