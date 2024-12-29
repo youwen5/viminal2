@@ -7,7 +7,7 @@ return {
         vim.cmd("ToggleTerm direction=float")
       end,
       mode = { "n", "t", "v" },
-      desc = "Toggle terminal"
+      desc = "Toggle terminal",
     },
     {
       "<leader>tv",
