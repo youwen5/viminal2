@@ -249,6 +249,10 @@ return {
             name = "vault",
             path = "~/Documents/vaults/vault",
           },
+          {
+            name = "alexandria",
+            path = "~/Documents/alexandria/content",
+          },
         },
       })
     end,
