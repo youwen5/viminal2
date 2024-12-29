@@ -126,6 +126,7 @@
                   jsonc
                   meson
                   nu
+                  tsx
                 ])
               ))
               # for some reason trigger_load still fails to load this in the
