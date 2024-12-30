@@ -40,6 +40,28 @@ local headers = {
 ⢀⣀⠀⣠⣀⡠⠞⣿⣿⣿⣿⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣴⣿⣷⣦⣄⣀⢿⡽⢻⣦
 ⠻⠶⠾⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠋
   ]],
+  [[
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣄⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣷⡀⠀⠀⠀⢀⣾⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⡄⠀⢠⣾⣿⣿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣤⣿⣿⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣹⣿⣿⣿⣿⣧⣀⣀⣀⣀⣀⣀⠻⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡹⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⣴⣄⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡜⣿⣿⣿⣿⣧⡀⠀⠀⠀⢀⣾⣿⣿⣆⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣶⣶⣶⣶⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣷⡀⠀⢠⣾⣿⣿⣿⡿⠂⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⡷⢠⣿⣿⣿⣿⡿⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⡿⣱⣿⣿⣿⣿⣟⣀⣀⣀⣀⣀⡀⠀
+⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⣱⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄
+⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⣵⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁
+⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⠟⣼⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⠏⢾⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣼⣿⣿⣿⣿⠋⠀⠀⢻⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠿⠿⠿⠿⠿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠘⢿⣿⣿⠃⠀⠀⠀⠀⠻⣿⣿⣿⣿⣦⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠋⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠿⠁⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣧⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣷⡉⠉⠉⠉⠉⠉⠹⣿⣿⣿⣿⣯⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⠟⢿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⠏⠀⠈⢿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⠋⠀⠀⠀⠈⢿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠈⢿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+  ]],
 }
 
 math.randomseed(os.time())
@@ -50,25 +72,66 @@ local function get_random_quote()
 A Mathematician is a machine for turning coffee
 into theorems.
 
-  - Paul Erdos
+                                   - Paul Erdos
     ]],
     [[
 A comathematician is a machine for turning
 cotheorems into ffee.
 
-  - Paul Erdos, on amphetamines
+             - Paul Erdos, on amphetamines
     ]],
     [[
 I have hardly ever known a mathematician who
 was capable of reasoning.
-
-  - Plato
+                                     - Plato
 ]],
     [[
 We'll only use as much category theory as is
 necessary. Famous last words…
 
-  - Professor Abramovich, Fall 2010
+           - Professor Abramovich, Fall 2010
+]],
+    [[
+These are your father's parentheses. Elegant
+weapons, for a more...civilized age.
+
+                                  - xkcd 297
+]],
+    [[
+     ed - text editor
+
+DESCRIPTION
+     Ed is the standard text editor.
+]],
+    [[
+Once upon a midnight dreary,
+Fingers cramped and vision bleary,
+System manuals piled high
+And wasted paper on the floor.
+]],
+    [[
+You know what they say, a monad in each hand is,
+better than two in the bush... no wait...
+
+                                      - byorgey
+]],
+    [[
+It's not clear that the category of cocoffee is
+isomorphic to ffee.
+                                       - oerjan
+]],
+    [[
+09 F9 11 02 9D 74 E3 5B D8 41 56 C5 63 56 88 C0
+]],
+    [[
+In the beginning, there were Real Programmers.
+
+                             - Eric S. Raymond
+]],
+    [[
+Baby, my love for you has a proper subgroup
+isomorphic to itself.
+                                - Evan Chen
 ]],
   }
 
