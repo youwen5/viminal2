@@ -33,7 +33,7 @@ if os.getenv("TERM") == "xterm-kitty" then
   require("scripts.kitty-padding").setup()
 end
 
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("oxocarbon")
 
 require("nvim-treesitter.configs").setup({
   ensure_installed = {},
