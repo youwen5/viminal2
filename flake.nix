@@ -9,6 +9,11 @@
       url = "github:mikavilpas/blink-ripgrep.nvim";
       flake = false;
     };
+
+    plugins-pomo-nvim = {
+      url = "github:epwalsh/pomo.nvim";
+      flake = false;
+    };
   };
   outputs =
     {
@@ -81,6 +86,8 @@
               black
               stylua
               marksman
+
+              libnotify
             ];
           };
 
@@ -130,6 +137,7 @@
           optionalPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [
               blink-ripgrep
+              pomo-nvim
             ];
             general = with pkgs.vimPlugins; [
               nvim-autopairs

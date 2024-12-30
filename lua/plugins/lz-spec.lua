@@ -217,6 +217,7 @@ return {
       lz.trigger_load("telescope.nvim")
       lz.trigger_load("nvim-lspconfig")
 
+      ---@diagnostic disable-next-line: missing-fields
       require("tailwind-tools").setup({
         conceal = { enabled = true },
         document_color = { enabled = true },
@@ -239,5 +240,48 @@ return {
   {
     "oxocarbon.nvim",
     colorscheme = { "oxocarbon" },
+  },
+  {
+    "pomo-nvim",
+    cmd = { "TimerStart", "TimerRepeat", "TimerSession" },
+    after = function()
+      ---@diagnostic disable-next-line: missing-fields
+      require("pomo").setup({
+        notifiers = {
+          {
+            name = "Default",
+            opts = {
+              sticky = false,
+            },
+          },
+          { name = "System" },
+        },
+        sessions = {
+          pomodoro = {
+            { name = "Work", duration = "25m" },
+            { name = "Short Break", duration = "5m" },
+            { name = "Work", duration = "25m" },
+            { name = "Short Break", duration = "5m" },
+            { name = "Work", duration = "25m" },
+            { name = "Long Break", duration = "15m" },
+          },
+          grind = {
+            { name = "Work", duration = "45m" },
+            { name = "Short Break", duration = "5m" },
+            { name = "Work", duration = "45m" },
+          },
+        },
+      })
+    end,
+    keys = {
+      {
+        "<leader>fp",
+        function()
+          require("telescope").load_extension("pomodori")
+          require("telescope").extensions.pomodori.timers()
+        end,
+        desc = "Manage Pomodori Timers",
+      },
+    },
   },
 }
