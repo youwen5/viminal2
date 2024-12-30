@@ -133,6 +133,12 @@ Baby, my love for you has a proper subgroup
 isomorphic to itself.
                                 - Evan Chen
 ]],
+    [[
+...anyone can do any amount of work, provided
+it isn't the work he is supposed to be doing at
+that moment.
+                              - Robert Benchley
+]],
   }
 
   local index = math.random(#quotes)
