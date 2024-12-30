@@ -54,7 +54,7 @@ into theorems.
     ]],
     [[
 A comathematician is a machine for turning
-cotheoremsinto ffee.
+cotheorems into ffee.
 
   - Paul Erdos, on amphetamines
     ]],
