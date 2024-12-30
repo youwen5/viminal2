@@ -14,6 +14,7 @@ return {
   require("plugins.by-lang.latex"),
   require("plugins.neogit"),
   require("plugins.obsidian"),
+  require("plugins.starter"),
   { "vim-wakatime" },
   { "clangd_extensions.nvim" },
   { "vim-sleuth" },
@@ -59,12 +60,6 @@ return {
     event = "BufEnter",
     after = function()
       require("mini.surround").setup()
-    end,
-  },
-  {
-    "mini.starter",
-    after = function()
-      require("mini.starter").setup()
     end,
   },
   {
