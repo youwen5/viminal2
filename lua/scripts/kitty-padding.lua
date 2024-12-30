@@ -14,7 +14,7 @@ local no_padding = function(sync)
     fn.jobstart(command, {
       on_stderr = function(_, d, _)
         if #d > 1 then
-          api.nvim_err_writeln("Error setting window padding. Make sure kitty remote control is turned on.")
+          vim.notify("Error setting window padding. Make sure kitty remote control is turned on.", vim.log.levels.DEBUG)
         end
       end,
     })
@@ -29,7 +29,7 @@ local restore_padding = function(sync)
     fn.jobstart(command, {
       on_stderr = function(_, d, _)
         if #d > 1 then
-          api.nvim_err_writeln("Error setting window padding. Make sure kitty remote control is turned on.")
+          vim.notify("Error setting window padding. Make sure kitty remote control is turned on.", vim.log.levels.DEBUG)
         end
       end,
     })

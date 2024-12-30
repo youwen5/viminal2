@@ -1,3 +1,8 @@
+if os.getenv("TERM") == "xterm-kitty" then
+  require("scripts.chameleon").setup()
+  require("scripts.kitty-padding").setup()
+end
+
 require("keymaps")
 require("plugins")
 require("scripts.obsidian-sync")
