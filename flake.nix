@@ -88,6 +88,8 @@
               marksman
 
               libnotify
+              neovim-node-client
+              nodejs
             ];
           };
 
@@ -217,6 +219,7 @@
                 websocat = "${pkgs.websocat}/bin/websocat";
                 tinymist = "${pkgs.tinymist}/bin/tinymist";
                 texpresso = "${pkgs.texpresso}/bin/texpresso";
+                neovim-node-host = "${pkgs.neovim-node-client}/bin/neovim-node-host";
               };
               nixdExtras = {
                 nixpkgs = inputs.nixpkgs.outPath;

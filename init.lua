@@ -35,6 +35,9 @@ vim.opt.scrolloff = 10
 
 vim.cmd.colorscheme("oxocarbon")
 
+vim.g.node_host_prog = nixCats("bin.neovim-node-host")
+vim.g.loaded_node_provider = nil
+
 require("nvim-treesitter.configs").setup({
   ensure_installed = {},
   sync_install = false,
