@@ -217,6 +217,10 @@ return {
         conceal = { enabled = true },
         document_color = { enabled = true },
       })
+
+      vim.keymap.set("n", "<leader>ft", function()
+        vim.cmd("Telescope tailwind utilities")
+      end, { desc = "Search through TailwindCSS utility classes available in the project." })
     end,
   },
   { "blink-ripgrep", lazy = true },
