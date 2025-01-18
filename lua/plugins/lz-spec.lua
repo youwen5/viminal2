@@ -293,7 +293,11 @@ return {
       })
 
       vim.keymap.set("n", "<leader>e", function()
-        MiniFiles.open(vim.api.nvim_buf_get_name(0))
+        if vim.bo.filetype == "ministarter" then
+          MiniFiles.open(nil, false)
+        else
+          MiniFiles.open(vim.api.nvim_buf_get_name(0))
+        end
       end)
       vim.keymap.set("n", "<leader>fe", function()
         MiniFiles.open(nil, false)
