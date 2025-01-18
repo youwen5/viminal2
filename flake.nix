@@ -153,6 +153,7 @@
               toggleterm-nvim
               undotree
               harpoon2
+              mini-files
               oil-nvim
 
               # QoL - augments existing features to be a little nicer or adds some minor enhancements

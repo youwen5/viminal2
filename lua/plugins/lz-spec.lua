@@ -285,4 +285,19 @@ return {
       vim.keymap.set("n", "];", dropbar_api.select_next_context, { desc = "Select next context" })
     end,
   },
+  {
+    "mini.files",
+    after = function()
+      require("mini.files").setup({
+        windows = { preview = true, width_preview = 40 },
+      })
+
+      vim.keymap.set("n", "<leader>e", function()
+        MiniFiles.open(vim.api.nvim_buf_get_name(0))
+      end)
+      vim.keymap.set("n", "<leader>fe", function()
+        MiniFiles.open(nil, false)
+      end)
+    end,
+  },
 }

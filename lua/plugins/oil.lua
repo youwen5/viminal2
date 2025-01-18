@@ -1,11 +1,30 @@
+-- we still use oil.nvim for more complex filesystem manipulations
 return {
   "oil.nvim",
+  cmd = "Oil",
+  keys = {
+    {
+      "<leader>bf",
+      function()
+        vim.cmd("Oil " .. vim.fn.getcwd())
+      end,
+      mode = "n",
+      desc = "Open oil in current working directory",
+    },
+    {
+      "<leader>be",
+      vim.cmd.Oil,
+      mode = "n",
+      desc = "Open oil in current file directory",
+    },
+  },
   after = function()
     require("oil").setup({
       columns = {
         "size",
         "icon",
       },
+      default_file_explorer = false,
       use_default_keymaps = false,
       keymaps = {
         ["J"] = "actions.parent",
@@ -27,13 +46,5 @@ return {
         ["~"] = "actions.tcd",
       },
     })
-
-    vim.keymap.set("n", "<leader>e", function()
-      vim.cmd("Oil")
-    end, { desc = "Open file explorer in current file directory" })
-
-    vim.keymap.set("n", "<leader>fe", function()
-      vim.cmd("Oil " .. vim.fn.getcwd())
-    end, { desc = "Open file explorer in current working directory" })
   end,
 }
