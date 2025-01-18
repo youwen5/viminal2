@@ -292,12 +292,15 @@
           default = pkgs.mkShell {
             name = defaultPackageName;
             packages =
-              [ defaultPackage ]
-              ++ (with pkgs; [
-                lua-language-server
-                nixfmt-rfc-style
-                stylua
-              ]);
+              # [ defaultPackage ] ++
+              (
+                with pkgs;
+                [
+                  lua-language-server
+                  nixfmt-rfc-style
+                  stylua
+                ]
+              );
           };
         };
 
