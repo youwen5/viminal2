@@ -158,7 +158,7 @@
               # QoL - augments existing features to be a little nicer or adds some minor enhancements
               fidget-nvim # the best notifications. unintrusive. also does LSP progress.
               gitsigns-nvim # shows git changed areas in the sidebar
-              barbecue-nvim # ide-like breadcrumbs
+              dropbar-nvim # ide-like breadcrumbs
               mini-ai # adds additional 'a' and 'i' patterns (nothing to do with AI)
               mini-hipatterns # highlight surrounding patterns
               mini-surround # essential. adds 'sa', 'sr', 'sd', etc for surrounding
