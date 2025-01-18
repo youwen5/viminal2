@@ -73,29 +73,32 @@
               python312Packages.pylatexenc
               fd
 
-              # lsps (minimal because should be provided per-project by nix)
-              nixd
-              tinymist
+              # lsps (minimal because should be provided per-project by nix, but the essentials are included).
+              # The idea is that documents (Typst or markdown) and configuration files (TOML, JSON, Nix, etc) are bundled.
+              # Everything else is provided per-project.
+
+              nixd # nix language server
+              tinymist # Typst
+              marksman # markdown
 
               # formatters
-              nixfmt-rfc-style
+              nixfmt-rfc-style # recommended nix formatter
               nodePackages_latest.prettier
-              taplo
-              typstyle
+              taplo # for TOML
+              typstyle # for Typst
               rustfmt
-              black
+              black # python
               stylua
-              marksman
 
-              libnotify
-              neovim-node-client
-              nodejs
+              libnotify # required for pomo.nvim
+              neovim-node-client # required for tailwind-tools-nvim's node component
+              nodejs # ^^^
             ];
           };
 
           # install lz.n and treesitter grammars
           startupPlugins = {
-            gitPlugins = with pkgs.neovimPlugins; [ ];
+            # gitPlugins = with pkgs.neovimPlugins; [ ];
             general = with pkgs.vimPlugins; [
               lz-n
               (nvim-treesitter.withPlugins (
@@ -130,7 +133,8 @@
               ))
               # for some reason trigger_load still fails to load this in the
               # proper order
-              telescope-ui-select-nvim
+              telescope-ui-select-nvim # replace default vim.ui.select with telescope
+              telescope-fzf-native-nvim
             ];
           };
 
@@ -138,57 +142,93 @@
           # lz.n (not necessarily lazy loaded)
           optionalPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [
-              blink-ripgrep
-              pomo-nvim
+              blink-ripgrep # when you hit <C-g>, blink.cmp will rg through the whole project and use it for completions
+              pomo-nvim # pomodoro timers
             ];
             general = with pkgs.vimPlugins; [
-              nvim-autopairs
-              nvim-lspconfig
-              which-key-nvim
+
+              # tools - stuff that adds entirely new functionality
               telescope-nvim
-              markdown-preview-nvim
-              render-markdown-nvim
-              nvim-web-devicons
-              oil-nvim
-              harpoon2
-              toggleterm-nvim
-              trouble-nvim
-              lualine-nvim
-              mini-ai
-              mini-hipatterns
-              mini-surround
-              mini-starter
-              cellular-automaton-nvim
-              indent-blankline-nvim
-              fidget-nvim
-              mini-bufremove
               neogit
-              gitsigns-nvim
-              barbecue-nvim
+              toggleterm-nvim
               undotree
-              conform-nvim
-              neocord
-              rustaceanvim
-              crates-nvim
-              haskell-tools-nvim
-              vim-wakatime
-              lsp_lines-nvim
-              vim-sleuth
-              typescript-tools-nvim
-              texpresso-vim
-              blink-cmp
-              clangd_extensions-nvim
-              tailwind-tools-nvim
-              typst-preview-nvim
-              lsp-progress-nvim
-              lazydev-nvim
-              plenary-nvim
-              obsidian-nvim
-              blink-compat
+              harpoon2
+              oil-nvim
+
+              # QoL - augments existing features to be a little nicer or adds some minor enhancements
+              fidget-nvim # the best notifications. unintrusive. also does LSP progress.
+              gitsigns-nvim # shows git changed areas in the sidebar
+              barbecue-nvim # ide-like breadcrumbs
+              mini-ai # adds additional 'a' and 'i' patterns (nothing to do with AI)
+              mini-hipatterns # highlight surrounding patterns
+              mini-surround # essential. adds 'sa', 'sr', 'sd', etc for surrounding
+              vim-sleuth # identifies the indent style in the current file
+              mini-bufremove # better buffer removal
+              which-key-nvim # hints for keybinds
+              nvim-autopairs # automatically pair (), {}, '''', etc
+
+              # lsp / formatting
+              trouble-nvim # shows diagnostics in a menu
+              lsp_lines-nvim # shows LSP diagnostics in virtual text under the line
+              nvim-lspconfig # configures language servers with sane defaults
+              conform-nvim # polyglot formatting swiss army knife
+
+              # bar
+              lualine-nvim
+              lsp-progress-nvim # adds LSP progress and attached LSPs to the bar
+
+              # eye candy
+              render-markdown-nvim # renders markdown. works in markdown files and also hover documentation.
+              nvim-web-devicons # helps plugins display nerd font icons.
+              indent-blankline-nvim # show indent guides
+              mini-starter # dashboard
+
+              # completion
+              blink-compat # allow nvim-cmp sources to be used with blink
+              blink-cmp # the fastest completions
+
+              # productivity
+              obsidian-nvim # obsidian zettelkasten workflows in nvim
+
+              # misc
+              plenary-nvim # utility functions in lua
+              vim-wakatime # coding time tracking
+              neocord # discord RPC
 
               # colorschemes
               rose-pine
               oxocarbon-nvim
+
+              # fun
+              cellular-automaton-nvim # a surprise!
+
+              # -- language specific --
+
+              # lua
+              lazydev-nvim # lazy loaded lua_ls when developing neovim plugins and configuration
+
+              # TeX
+              texpresso-vim # super fast live TeX preview
+
+              # rust
+              crates-nvim # provides intelligent features for Crates.toml
+              rustaceanvim # better rust_analyzer experience
+
+              # TS/JS
+              typescript-tools-nvim # better typescript-language-server experience
+              tailwind-tools-nvim # tailwindcss enhanacements and completions
+
+              # cpp
+              clangd_extensions-nvim
+
+              # markdown
+              markdown-preview-nvim # view markdown files rendered in a live updating browser window
+
+              # typst
+              typst-preview-nvim # view typst documents rendered in a live updating browser window
+
+              # haskell
+              haskell-tools-nvim
             ];
           };
 
