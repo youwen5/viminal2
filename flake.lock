@@ -2,11 +2,11 @@
   "nodes": {
     "nixCats": {
       "locked": {
-        "lastModified": 1735395058,
-        "narHash": "sha256-/SqVdchMmzcDJhGoZnTQDtGF+MnVh5cAWa06b6swG7E=",
+        "lastModified": 1737200564,
+        "narHash": "sha256-lU59WUi3zxCJfbNt7xMRQR16LfJGcNHDDU/CtFQl2EQ=",
         "owner": "BirdeeHub",
         "repo": "nixCats-nvim",
-        "rev": "3f3f3e9ea4e9b69735e06a757eca19ce06a25f80",
+        "rev": "60fe6f3ba2631c315910c9e411c3e5408175e840",
         "type": "github"
       },
       "original": {
@@ -17,11 +17,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1736320768,
-        "narHash": "sha256-nIYdTAiKIGnFNugbomgBJR+Xv5F1ZQU+HfaBqJKroC0=",
+        "lastModified": 1737003892,
+        "narHash": "sha256-RCzJE9wKByLCXmRBp+z8LK9EgdW+K+W/DXnJS4S/NVo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "4bc9c909d9ac828a039f288cf872d16d38185db8",
+        "rev": "ae06b9c2d83cb5c8b12d7d0e32692e93d1379713",
         "type": "github"
       },
       "original": {
@@ -34,11 +34,11 @@
     "plugins-blink-ripgrep": {
       "flake": false,
       "locked": {
-        "lastModified": 1736451142,
-        "narHash": "sha256-WmCnSG0GiwDJQb5yF51j7n8/OQNLc6musa+sVrlme5k=",
+        "lastModified": 1737014200,
+        "narHash": "sha256-i8F3CBUyvDIXqOoiUP3DrKhA0/SGAhn3Y4FdAtAJz0Q=",
         "owner": "mikavilpas",
         "repo": "blink-ripgrep.nvim",
-        "rev": "705069a57566a5e7427025264451c581f0bfb9c4",
+        "rev": "d93f97412462ab34d16fc04fe43b0a6170cc3834",
         "type": "github"
       },
       "original": {
