@@ -65,6 +65,7 @@ require("nvim-treesitter.configs").setup({
   },
 })
 
+-- no line numbers for terminals
 vim.api.nvim_create_autocmd({
   "TermOpen",
 }, {
@@ -74,6 +75,7 @@ vim.api.nvim_create_autocmd({
   end,
 })
 
+-- flash yanked test
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank({ higroup = "Visual", timeout = 300 })
@@ -83,4 +85,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- silence the hover 'no information available' notification
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   silent = true,
+})
+
+vim.api.nvim_create_autocmd({ "VimResized" }, {
+  group = vim.api.nvim_create_augroup("EqualizeSplits", {}),
+  callback = function()
+    local current_tab = vim.api.nvim_get_current_tabpage()
+    vim.cmd("tabdo wincmd =")
+    vim.api.nvim_set_current_tabpage(current_tab)
+  end,
+  desc = "Resize splits with terminal window",
 })
