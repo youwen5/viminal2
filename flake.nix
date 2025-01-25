@@ -80,6 +80,7 @@
               nixd # nix language server
               tinymist # Typst
               marksman # markdown
+              vale-ls # prose
 
               # formatters
               nixfmt-rfc-style # recommended nix formatter

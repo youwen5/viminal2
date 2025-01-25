@@ -69,6 +69,9 @@ M.setup = function()
   lspconfig.clangd.setup({})
   lspconfig.mesonlsp.setup({})
   lspconfig.nushell.setup({})
+  lspconfig.vale_ls.setup({
+    filetypes = { "markdown", "text", "tex", "rst", "typst" },
+  })
 end
 
 return M
