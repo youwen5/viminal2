@@ -1,5 +1,4 @@
--- Experimental Neovim byte-compiled module loader
+-- [nfnl] Compiled from ./fnl/plugins/init.fnl by https://github.com/Olical/nfnl, do not edit.
 vim.loader.enable()
-
-local pluginSpec = require("plugins.lz-spec")
-require("lz.n").load(pluginSpec)
+local plugins = require("plugins.lz-spec")
+return require("lz.n").load(plugins)
