@@ -24,10 +24,7 @@
  ;; autocmd, so it'll only apply to buffers you're interested in.
  ;; Will use backslashes on Windows.
  ;; Defaults to compiling all .fnl files, you may want to limit it to your fnl/ directory.
- :source-file-patterns [:./fnl/.*.fnl
-                        :./fnl/*.fnl
-                        :./fnl/**/*.fnl
-                        :./new-init.fnl]
+ :source-file-patterns [:./fnl/.*.fnl :./fnl/*.fnl :./fnl/**/*.fnl :./init.fnl]
  ;; A function that is given the absolute path of a Fennel file and should return
  ;; the equivalent Lua path, by default this will translate `fnl/foo/bar.fnl` to `lua/foo/bar.lua`.
  ;; See the "Writing Lua elsewhere" tip below for an example function that writes to a sub directory.
