@@ -72,6 +72,7 @@ M.setup = function()
   lspconfig.vale_ls.setup({
     filetypes = { "markdown", "text", "tex", "rst", "typst" },
   })
+  lspconfig.fennel_ls.setup({})
 end
 
 return M

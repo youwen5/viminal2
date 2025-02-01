@@ -210,7 +210,7 @@
               lazydev-nvim # lazy loaded lua_ls when developing neovim plugins and configuration
 
               # TeX
-              texpresso-vim # super fast live TeX preview
+              # texpresso-vim # super fast live TeX preview
 
               # rust
               crates-nvim # provides intelligent features for Crates.toml
@@ -231,6 +231,9 @@
 
               # haskell
               haskell-tools-nvim
+
+              # fennel
+              nfnl
             ];
           };
 
@@ -260,7 +263,7 @@
               bin = {
                 websocat = "${pkgs.websocat}/bin/websocat";
                 tinymist = "${pkgs.tinymist}/bin/tinymist";
-                texpresso = "${pkgs.texpresso}/bin/texpresso";
+                # texpresso = "${pkgs.texpresso}/bin/texpresso";
                 neovim-node-host = "${pkgs.neovim-node-client}/bin/neovim-node-host";
               };
               nixdExtras = {
@@ -301,6 +304,8 @@
                   lua-language-server
                   nixfmt-rfc-style
                   stylua
+                  fennel-ls
+                  fennel
                 ]
               );
           };
