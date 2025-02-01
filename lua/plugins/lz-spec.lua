@@ -304,4 +304,5 @@ return {
       end)
     end,
   },
+  { "nfnl", ft = { "fennel" } },
 }

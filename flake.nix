@@ -106,6 +106,7 @@
                 p:
                 (with p; [
                   lua
+                  fennel
                   c
                   javascript
                   typescript
@@ -306,6 +307,7 @@
                   stylua
                   fennel-ls
                   fennel
+                  fnlfmt
                 ]
               );
           };

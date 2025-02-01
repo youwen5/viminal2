@@ -67,6 +67,7 @@ return {
         tex = { "latexindent" },
         cpp = { "clang-format", lsp_format = "fallback" },
         c = { "clang-format", lsp_format = "fallback" },
+        fennel = { "fnlfmt", lsp_format = "fallback" },
       },
     })
 
