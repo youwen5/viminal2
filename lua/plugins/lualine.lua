@@ -1,76 +1,24 @@
-return {
-  "lualine.nvim",
-  after = function()
-    require("lualine").setup({
-      options = {
-        icons_enabled = true,
-        theme = "auto",
-        component_separators = { left = "", right = "" },
-        section_separators = { left = "", right = "" },
-        disabled_filetypes = {
-          statusline = { "ministarter" },
-          winbar = {},
-        },
-        ignore_focus = {},
-        always_divide_middle = true,
-        globalstatus = true,
-        refresh = {
-          statusline = 1000,
-          tabline = 1000,
-          winbar = 1000,
-        },
-      },
-      sections = {
-        lualine_a = { "branch" },
-        lualine_b = {
-          "filetype",
-        },
-        lualine_c = {
-          "progress",
-          function()
-            require("lz.n").trigger_load("lsp-progress")
-            return require("lsp-progress").progress()
-          end,
-        },
-        lualine_x = {
-          function()
-            local ok, pomo = pcall(require, "pomo")
-            if not ok then
-              return ""
-            end
-
-            local timer = pomo.get_first_to_finish()
-            if timer == nil then
-              return ""
-            end
-
-            return "󰄉 " .. tostring(timer)
-          end,
-          "encoding",
-          "fileformat",
-        },
-        lualine_y = { "diff", "diagnostics" },
-        lualine_z = { "location" },
-      },
-      inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = { "filename" },
-        lualine_x = { "location" },
-        lualine_y = {},
-        lualine_z = {},
-      },
-      tabline = {},
-      winbar = {},
-      inactive_winbar = {},
-      extensions = {},
-    })
-    -- listen lsp-progress event and refresh lualine
-    vim.api.nvim_create_augroup("lualine_augroup", { clear = true })
-    vim.api.nvim_create_autocmd("User", {
-      group = "lualine_augroup",
-      pattern = "LspProgressStatusUpdated",
-      callback = require("lualine").refresh,
-    })
-  end,
-}
+-- [nfnl] Compiled from ./fnl/plugins/lualine.fnl by https://github.com/Olical/nfnl, do not edit.
+local function _1_()
+  local function _2_()
+    require("lz.n").trigger_load("lsp-progress")
+    return require("lsp-progress").progress()
+  end
+  local function _3_()
+    local ok, pomo = pcall(require, "pomo")
+    if not ok then
+      return ""
+    else
+    end
+    local timer = pomo.get_first_to_finish()
+    if (timer == nil) then
+      return ""
+    else
+    end
+    return ("\243\176\132\137 " .. tostring(timer))
+  end
+  require("lualine").setup({extensions = {}, inactive_sections = {lualine_a = {}, lualine_b = {}, lualine_c = {"filename"}, lualine_x = {"location"}, lualine_y = {}, lualine_z = {}}, inactive_winbar = {}, options = {always_divide_middle = true, component_separators = {left = "\238\130\177", right = "\238\130\179"}, disabled_filetypes = {statusline = {"ministarter"}, winbar = {}}, globalstatus = true, icons_enabled = true, ignore_focus = {}, refresh = {statusline = 1000, tabline = 1000, winbar = 1000}, section_separators = {left = "\238\130\180", right = "\238\130\182"}, theme = "auto"}, sections = {lualine_a = {"branch"}, lualine_b = {"filetype"}, lualine_c = {"progress", _2_}, lualine_x = {_3_, "encoding", "fileformat"}, lualine_y = {"diff", "diagnostics"}, lualine_z = {"location"}}, tabline = {}, winbar = {}})
+  vim.api.nvim_create_augroup("lualine_augroup", {clear = true})
+  return vim.api.nvim_create_autocmd("User", {callback = require("lualine").refresh, group = "lualine_augroup", pattern = "LspProgressStatusUpdated"})
+end
+return {"lualine.nvim", after = _1_}
