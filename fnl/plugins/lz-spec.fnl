@@ -91,7 +91,19 @@
            ((. (require :crates) :setup) {}))
   :event "BufRead Cargo.toml"}
  [:rustaceanvim]
- [:haskell-tools.nvim]
+ {1 :haskell-tools.nvim
+  :after (fn []
+           (local ht (require :haskell-tools))
+           (local bufnr (vim.api.nvim_get_current_buf))
+           (local opts {:noremap true :silent true :buffer bufnr})
+           (let [s vim.keymap.set]
+             (s :n :<leader>hs ht.hoogle.hoogle_signature opts)
+             (s :n :<leader>hrr ht.repl.toggle opts)
+             (s :n :<leader>hrf
+                (fn []
+                  (ht.repl.toggle (vim.api.nvim_buf_get_name 0)))
+                opts)
+             (s :n :<leader>hrq ht.repl.quit opts)))}
  {1 :typescript-tools.nvim
   :after (fn []
            ((. (require :lz.n) :trigger_load) :nvim-lspconfig)

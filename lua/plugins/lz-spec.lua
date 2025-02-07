@@ -42,52 +42,65 @@ local function _14_()
   return require("crates").setup({})
 end
 local function _15_()
+  local ht = require("haskell-tools")
+  local bufnr = vim.api.nvim_get_current_buf()
+  local opts = {noremap = true, silent = true, buffer = bufnr}
+  local s = vim.keymap.set
+  s("n", "<leader>hs", ht.hoogle.hoogle_signature, opts)
+  s("n", "<leader>hrr", ht.repl.toggle, opts)
+  local function _16_()
+    return ht.repl.toggle(vim.api.nvim_buf_get_name(0))
+  end
+  s("n", "<leader>hrf", _16_, opts)
+  return s("n", "<leader>hrq", ht.repl.quit, opts)
+end
+local function _17_()
   require("lz.n").trigger_load("nvim-lspconfig")
   return require("typescript-tools").setup({})
 end
-local function _16_()
+local function _18_()
   require("lsp_lines").setup()
   return vim.diagnostic.config({virtual_lines = {only_current_line = true}, virtual_text = false})
 end
-local function _17_()
+local function _19_()
   local lz = require("lz.n")
   lz.trigger_load("telescope.nvim")
   lz.trigger_load("nvim-lspconfig")
   require("tailwind-tools").setup({conceal = {enabled = true}, document_color = {enabled = true}})
-  local function _18_()
+  local function _20_()
     return vim.cmd("Telescope tailwind utilities")
   end
-  return vim.keymap.set("n", "<leader>ft", _18_, {desc = "Search through TailwindCSS utility classes available in the project."})
-end
-local function _19_()
-  return require("lazydev").setup()
-end
-local function _20_()
-  return require("pomo").setup({notifiers = {{name = "Default", opts = {sticky = false}}, {name = "System"}}, sessions = {grind = {{duration = "45m", name = "Work"}, {duration = "5m", name = "Short Break"}, {duration = "45m", name = "Work"}}, pomodoro = {{duration = "25m", name = "Work"}, {duration = "5m", name = "Short Break"}, {duration = "25m", name = "Work"}, {duration = "5m", name = "Short Break"}, {duration = "25m", name = "Work"}, {duration = "15m", name = "Long Break"}}}})
+  return vim.keymap.set("n", "<leader>ft", _20_, {desc = "Search through TailwindCSS utility classes available in the project."})
 end
 local function _21_()
+  return require("lazydev").setup()
+end
+local function _22_()
+  return require("pomo").setup({notifiers = {{name = "Default", opts = {sticky = false}}, {name = "System"}}, sessions = {grind = {{duration = "45m", name = "Work"}, {duration = "5m", name = "Short Break"}, {duration = "45m", name = "Work"}}, pomodoro = {{duration = "25m", name = "Work"}, {duration = "5m", name = "Short Break"}, {duration = "25m", name = "Work"}, {duration = "5m", name = "Short Break"}, {duration = "25m", name = "Work"}, {duration = "15m", name = "Long Break"}}}})
+end
+local function _23_()
   require("telescope").load_extension("pomodori")
   return require("telescope").extensions.pomodori.timers()
 end
-local function _22_()
+local function _24_()
   local dropbar_api = require("dropbar.api")
   vim.keymap.set("n", "<Leader>;", dropbar_api.pick, {desc = "Pick symbols in winbar"})
   vim.keymap.set("n", "[;", dropbar_api.goto_context_start, {desc = "Go to start of current context"})
   return vim.keymap.set("n", "];", dropbar_api.select_next_context, {desc = "Select next context"})
 end
-local function _23_()
+local function _25_()
   require("mini.files").setup({windows = {preview = true, width_preview = 40}})
-  local function _24_()
+  local function _26_()
     if (vim.bo.filetype == "ministarter") then
       return MiniFiles.open(nil, false)
     else
       return MiniFiles.open(vim.api.nvim_buf_get_name(0))
     end
   end
-  vim.keymap.set("n", "<leader>e", _24_)
-  local function _26_()
+  vim.keymap.set("n", "<leader>e", _26_)
+  local function _28_()
     return MiniFiles.open(nil, false)
   end
-  return vim.keymap.set("n", "<leader>fe", _26_)
+  return vim.keymap.set("n", "<leader>fe", _28_)
 end
-return {require("plugins.blink-cmp"), require("plugins.telescope"), require("plugins.oil"), require("plugins.harpoon"), require("plugins.lualine"), require("plugins.conform"), require("plugins.lsp-progress"), require("plugins.gitsigns"), require("plugins.autopairs"), require("plugins.trouble"), require("plugins.render-markdown"), require("plugins.toggleterm"), require("plugins.by-lang.latex"), require("plugins.neogit"), require("plugins.obsidian"), require("plugins.starter"), {"vim-wakatime"}, {"clangd_extensions.nvim"}, {"vim-sleuth"}, {"nvim-lspconfig", after = require("lsp").setup, event = "BufEnter"}, {"which-key.nvim", after = _1_}, {"nvim-web-devicons"}, {"markdown-preview.nvim", filetypes = {"markdown"}}, {"typst-preview.nvim", after = _2_, filetypes = {"*.typ"}}, {"mini.ai", after = _3_, event = "BufEnter"}, {"mini.surround", after = _4_, event = "BufEnter"}, {"fidget.nvim", after = _5_}, {"cellular-automaton.nvim", cmd = "CellularAutomaton", keys = {{"<leader>mr", _6_, desc = "A surprise!", mode = "n"}, {"<leader>bruh", _7_, desc = "A surprise!", mode = "n"}}}, {"indent-blankline.nvim", after = _8_}, {"mini.bufremove", after = _9_, keys = {{"<leader>bd", _10_, desc = "Close buffer", mode = {"n", "v"}}}}, {"mini.hipatterns", after = _11_, event = "BufEnter"}, {"undotree", cmd = "UndotreeToggle", keys = {{"<leader>u", _12_, desc = "Toggle undotree", mode = "n"}}}, {"neocord", after = _13_, event = "BufEnter"}, {"crates.nvim", after = _14_, event = "BufRead Cargo.toml"}, {"rustaceanvim"}, {"haskell-tools.nvim"}, {"typescript-tools.nvim", after = _15_, filetypes = {"typescriptreact", "typescript", "javascript", "svelte", "javascriptreact"}}, {"lsp_lines.nvim", after = _16_, event = "LspAttach"}, {"tailwind-tools.nvim", after = _17_}, {"blink-ripgrep", lazy = true}, {"blink.compat", lazy = true}, {"lazydev.nvim", after = _19_, filetypes = {"lua"}}, {"rose-pine", colorscheme = {"rose-pine", "rose-pine-dawn", "rose-pine-moon", "rose-pine-main"}}, {"oxocarbon.nvim", colorscheme = {"oxocarbon"}}, {"pomo-nvim", after = _20_, cmd = {"TimerStart", "TimerRepeat", "TimerSession"}, keys = {{"<leader>fp", _21_, desc = "Manage Pomodori Timers"}}}, {"dropbar.nvim", after = _22_}, {"mini.files", after = _23_}, {"nfnl", ft = {"fennel"}}}
+return {require("plugins.blink-cmp"), require("plugins.telescope"), require("plugins.oil"), require("plugins.harpoon"), require("plugins.lualine"), require("plugins.conform"), require("plugins.lsp-progress"), require("plugins.gitsigns"), require("plugins.autopairs"), require("plugins.trouble"), require("plugins.render-markdown"), require("plugins.toggleterm"), require("plugins.by-lang.latex"), require("plugins.neogit"), require("plugins.obsidian"), require("plugins.starter"), {"vim-wakatime"}, {"clangd_extensions.nvim"}, {"vim-sleuth"}, {"nvim-lspconfig", after = require("lsp").setup, event = "BufEnter"}, {"which-key.nvim", after = _1_}, {"nvim-web-devicons"}, {"markdown-preview.nvim", filetypes = {"markdown"}}, {"typst-preview.nvim", after = _2_, filetypes = {"*.typ"}}, {"mini.ai", after = _3_, event = "BufEnter"}, {"mini.surround", after = _4_, event = "BufEnter"}, {"fidget.nvim", after = _5_}, {"cellular-automaton.nvim", cmd = "CellularAutomaton", keys = {{"<leader>mr", _6_, desc = "A surprise!", mode = "n"}, {"<leader>bruh", _7_, desc = "A surprise!", mode = "n"}}}, {"indent-blankline.nvim", after = _8_}, {"mini.bufremove", after = _9_, keys = {{"<leader>bd", _10_, desc = "Close buffer", mode = {"n", "v"}}}}, {"mini.hipatterns", after = _11_, event = "BufEnter"}, {"undotree", cmd = "UndotreeToggle", keys = {{"<leader>u", _12_, desc = "Toggle undotree", mode = "n"}}}, {"neocord", after = _13_, event = "BufEnter"}, {"crates.nvim", after = _14_, event = "BufRead Cargo.toml"}, {"rustaceanvim"}, {"haskell-tools.nvim", after = _15_}, {"typescript-tools.nvim", after = _17_, filetypes = {"typescriptreact", "typescript", "javascript", "svelte", "javascriptreact"}}, {"lsp_lines.nvim", after = _18_, event = "LspAttach"}, {"tailwind-tools.nvim", after = _19_}, {"blink-ripgrep", lazy = true}, {"blink.compat", lazy = true}, {"lazydev.nvim", after = _21_, filetypes = {"lua"}}, {"rose-pine", colorscheme = {"rose-pine", "rose-pine-dawn", "rose-pine-moon", "rose-pine-main"}}, {"oxocarbon.nvim", colorscheme = {"oxocarbon"}}, {"pomo-nvim", after = _22_, cmd = {"TimerStart", "TimerRepeat", "TimerSession"}, keys = {{"<leader>fp", _23_, desc = "Manage Pomodori Timers"}}}, {"dropbar.nvim", after = _24_}, {"mini.files", after = _25_}, {"nfnl", ft = {"fennel"}}}
