@@ -18,6 +18,7 @@ local function _1_()
     lspconfig.nushell.setup({})
     lspconfig.vale_ls.setup({filetypes = {"markdown", "text", "tex", "rst", "typst"}})
     lspconfig.fennel_ls.setup({})
+    lspconfig.elmls.setup({})
   end
   return {}
 end

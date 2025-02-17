@@ -20,5 +20,6 @@
                                                   :tex
                                                   :rst
                                                   :typst]})
-            (lspconfig.fennel_ls.setup {}))
+            (lspconfig.fennel_ls.setup {})
+            (lspconfig.elmls.setup {}))
           {})}
