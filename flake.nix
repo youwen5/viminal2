@@ -133,6 +133,7 @@
                   tsx
                   elm
                   purescript
+                  dhall
                 ])
               ))
               # for some reason trigger_load still fails to load this in the
