@@ -15,6 +15,7 @@
  (require :plugins.obsidian)
  (require :plugins.starter)
  [:vim-wakatime]
+ [:purescript-vim]
  [:clangd_extensions.nvim]
  [:vim-sleuth]
  {1 :nvim-lspconfig :after (. (require :lsp) :setup) :event :BufEnter}

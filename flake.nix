@@ -237,6 +237,9 @@
 
               # fennel
               nfnl
+
+              # purescript
+              purescript-vim
             ];
           };
 

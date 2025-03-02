@@ -22,5 +22,10 @@
                                                   :typst]})
             (lspconfig.fennel_ls.setup {})
             (lspconfig.elmls.setup {})
-            (lspconfig.purescriptls.setup {}))
+            (lspconfig.purescriptls.setup {:command :purescript-language-server
+                                           :args [:stdio "--config {}"]
+                                           :filetypes [:purescript]
+                                           :rootPatterns [:bower.json
+                                                          :psc-package.json
+                                                          :spago.dhall]}))
           {})}
