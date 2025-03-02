@@ -21,5 +21,6 @@
                                                   :rst
                                                   :typst]})
             (lspconfig.fennel_ls.setup {})
-            (lspconfig.elmls.setup {}))
+            (lspconfig.elmls.setup {})
+            (lspconfig.purescriptls.setup {}))
           {})}

@@ -19,6 +19,7 @@ local function _1_()
     lspconfig.vale_ls.setup({filetypes = {"markdown", "text", "tex", "rst", "typst"}})
     lspconfig.fennel_ls.setup({})
     lspconfig.elmls.setup({})
+    lspconfig.purescriptls.setup({})
   end
   return {}
 end

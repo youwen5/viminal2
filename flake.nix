@@ -132,6 +132,7 @@
                   nu
                   tsx
                   elm
+                  purescript
                 ])
               ))
               # for some reason trigger_load still fails to load this in the
