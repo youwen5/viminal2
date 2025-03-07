@@ -15,7 +15,7 @@
             (lspconfig.clangd.setup {})
             (lspconfig.mesonlsp.setup {})
             (lspconfig.nushell.setup {})
-            (lspconfig.harper_ls.setup {})
+            (lspconfig.harper_ls.setup {:settings {:harper-ls {:linters {:SentenceCapitalization false}}}})
             (lspconfig.fennel_ls.setup {})
             (lspconfig.elmls.setup {})
             (lspconfig.purescriptls.setup {:command :purescript-language-server
