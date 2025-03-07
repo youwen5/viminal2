@@ -2,7 +2,9 @@
  :after (fn []
           ((. (require :lz.n) :trigger_load) :blink-ripgrep)
           ((. (require :lz.n) :trigger_load) :blink.compat)
-          ((. (require :blink.cmp) :setup) {:appearance {:nerd_font_variant :normal
+          ((. (require :blink.cmp) :setup) {:cmdline {:enabled true
+                                                      :completion {:menu {:auto_show true}}}
+                                            :appearance {:nerd_font_variant :normal
                                                          :use_nvim_cmp_as_default true}
                                             :completion {:documentation {:auto_show true
                                                                          :auto_show_delay_ms 500
