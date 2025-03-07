@@ -15,11 +15,7 @@
             (lspconfig.clangd.setup {})
             (lspconfig.mesonlsp.setup {})
             (lspconfig.nushell.setup {})
-            (lspconfig.vale_ls.setup {:filetypes [:markdown
-                                                  :text
-                                                  :tex
-                                                  :rst
-                                                  :typst]})
+            (lspconfig.harper_ls.setup {})
             (lspconfig.fennel_ls.setup {})
             (lspconfig.elmls.setup {})
             (lspconfig.purescriptls.setup {:command :purescript-language-server
