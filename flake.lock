@@ -2,11 +2,11 @@
   "nodes": {
     "nixCats": {
       "locked": {
-        "lastModified": 1740837766,
-        "narHash": "sha256-LKeBL3gjm+Fg2yVDKqB2gIiVnccv4TSUtt5NmQcasrk=",
+        "lastModified": 1742667932,
+        "narHash": "sha256-2ePWtyLqzrn1dMyxxm7MrpbmWNsFYp1GolJehaZh2K0=",
         "owner": "BirdeeHub",
         "repo": "nixCats-nvim",
-        "rev": "83264cfaf7d7438c52db28a95934d87ae45faaae",
+        "rev": "2ae3e08fbda6e5c1099bc399f96be4138e433738",
         "type": "github"
       },
       "original": {
@@ -17,11 +17,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1741037377,
-        "narHash": "sha256-SvtvVKHaUX4Owb+PasySwZsoc5VUeTf1px34BByiOxw=",
+        "lastModified": 1742578646,
+        "narHash": "sha256-GiQ40ndXRnmmbDZvuv762vS+gew1uDpFwOfgJ8tLiEs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "02032da4af073d0f6110540c8677f16d4be0117f",
+        "rev": "94c4dbe77c0740ebba36c173672ca15a7926c993",
         "type": "github"
       },
       "original": {
@@ -34,11 +34,11 @@
     "plugins-blink-ripgrep": {
       "flake": false,
       "locked": {
-        "lastModified": 1741068159,
-        "narHash": "sha256-OxUvPqUiS7Y5JLdnPTF+sy2t+zfzagQl6RHaa2fglFc=",
+        "lastModified": 1742663760,
+        "narHash": "sha256-IojnNvIkkaJAPBfD/c4+8uG1uhluiCA971UDYK7fyAY=",
         "owner": "mikavilpas",
         "repo": "blink-ripgrep.nvim",
-        "rev": "616974222e2871c582e3e22dc81b2259a8fdcf79",
+        "rev": "af61f99945e15b195fbce017230cedb0497ded4d",
         "type": "github"
       },
       "original": {
