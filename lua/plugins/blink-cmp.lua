@@ -1,6 +1,6 @@
 -- [nfnl] Compiled from ./fnl/plugins/blink-cmp.fnl by https://github.com/Olical/nfnl, do not edit.
 local function _1_()
-  require("lz.n").trigger_load("blink-ripgrep")
+  require("lz.n").trigger_load("blink-ripgrep.nvim")
   require("lz.n").trigger_load("blink.compat")
   local function _2_()
     return require("blink-cmp").show({providers = {"ripgrep"}})

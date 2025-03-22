@@ -1,6 +1,6 @@
 {1 :blink.cmp
  :after (fn []
-          ((. (require :lz.n) :trigger_load) :blink-ripgrep)
+          ((. (require :lz.n) :trigger_load) :blink-ripgrep.nvim)
           ((. (require :lz.n) :trigger_load) :blink.compat)
           ((. (require :blink.cmp) :setup) {:cmdline {:enabled true
                                                       :completion {:menu {:auto_show true}}}

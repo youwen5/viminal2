@@ -4,16 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
-
-    plugins-blink-ripgrep = {
-      url = "github:mikavilpas/blink-ripgrep.nvim";
-      flake = false;
-    };
-
-    plugins-pomo-nvim = {
-      url = "github:epwalsh/pomo.nvim";
-      flake = false;
-    };
   };
   outputs =
     {
@@ -29,28 +19,15 @@
       extra_pkg_config = {
         # allowUnfree = true;
       };
-      inherit
-        (forEachSystem (
-          system:
-          let
-            dependencyOverlays = (import ./nix/overlays.nix) ++ [
-              # This overlay grabs all the inputs named in the format
-              # `plugins-<pluginName>`
-              # Once we add this overlay to our nixpkgs, we are able to
-              # use `pkgs.neovimPlugins`, which is a set of our plugins.
-              (utils.standardPluginOverlay inputs)
-              # add any flake overlays here.
-            ];
-          in
-          # these overlays will be wrapped with ${system}
-          # and we will call the same utils.eachSystem function
-          # later on to access them.
-          {
-            inherit dependencyOverlays;
-          }
-        ))
-        dependencyOverlays
-        ;
+
+      dependencyOverlays = (import ./nix/overlays.nix) ++ [
+        # This overlay grabs all the inputs named in the format
+        # `plugins-<pluginName>`
+        # Once we add this overlay to our nixpkgs, we are able to
+        # use `pkgs.neovimPlugins`, which is a set of our plugins.
+        (utils.standardPluginOverlay inputs)
+        # add any flake overlays here.
+      ];
       # see :help nixCats.flake.outputs.categories
       # and
       # :help nixCats.flake.outputs.categoryDefinitions.scheme
@@ -147,8 +124,8 @@
           # lz.n (not necessarily lazy loaded)
           optionalPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [
-              blink-ripgrep # when you hit <C-g>, blink.cmp will rg through the whole project and use it for completions
-              pomo-nvim # pomodoro timers
+              # blink-ripgrep # when you hit <C-g>, blink.cmp will rg through the whole project and use it for completions
+              # pomo-nvim # pomodoro timers
             ];
             general = with pkgs.vimPlugins; [
 
@@ -160,6 +137,9 @@
               harpoon2
               mini-files
               oil-nvim
+
+              blink-ripgrep-nvim # when you hit <C-g>, blink.cmp will rg through the whole project and use it for completions
+              pomo-nvim # pomodoro timers
 
               # QoL - augments existing features to be a little nicer or adds some minor enhancements
               fidget-nvim # the best notifications. unintrusive. also does LSP progress.

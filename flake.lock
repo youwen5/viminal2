@@ -31,44 +31,10 @@
         "type": "github"
       }
     },
-    "plugins-blink-ripgrep": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1742663760,
-        "narHash": "sha256-IojnNvIkkaJAPBfD/c4+8uG1uhluiCA971UDYK7fyAY=",
-        "owner": "mikavilpas",
-        "repo": "blink-ripgrep.nvim",
-        "rev": "af61f99945e15b195fbce017230cedb0497ded4d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mikavilpas",
-        "repo": "blink-ripgrep.nvim",
-        "type": "github"
-      }
-    },
-    "plugins-pomo-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1722376269,
-        "narHash": "sha256-tJ2TrypKnCnQm+6FDjX0KDr+UNoBBVvGIm+uWJtpNLc=",
-        "owner": "epwalsh",
-        "repo": "pomo.nvim",
-        "rev": "aa8decc421d89be0f10b1fc6a602cdd269f350ff",
-        "type": "github"
-      },
-      "original": {
-        "owner": "epwalsh",
-        "repo": "pomo.nvim",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "nixCats": "nixCats",
-        "nixpkgs": "nixpkgs",
-        "plugins-blink-ripgrep": "plugins-blink-ripgrep",
-        "plugins-pomo-nvim": "plugins-pomo-nvim"
+        "nixpkgs": "nixpkgs"
       }
     }
   },

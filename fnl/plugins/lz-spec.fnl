@@ -130,7 +130,7 @@
            (vim.keymap.set :n :<leader>ft
                            (fn [] (vim.cmd "Telescope tailwind utilities"))
                            {:desc "Search through TailwindCSS utility classes available in the project."}))}
- {1 :blink-ripgrep :lazy true}
+ {1 :blink-ripgrep.nvim :lazy true}
  {1 :blink.compat :lazy true}
  {1 :lazydev.nvim
   :after (fn []
@@ -139,7 +139,7 @@
  {1 :rose-pine
   :colorscheme [:rose-pine :rose-pine-dawn :rose-pine-moon :rose-pine-main]}
  {1 :oxocarbon.nvim :colorscheme [:oxocarbon]}
- {1 :pomo-nvim
+ {1 :pomo.nvim
   :after (fn []
            ((. (require :pomo) :setup) {:notifiers [{:name :Default
                                                      :opts {:sticky false}}
