@@ -1,0 +1,38 @@
+name: Build for linux
+
+on:
+  pull_request:
+
+jobs:
+  build-x86_64:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Nix flake Nixpkgs inputs
+        uses: DeterminateSystems/flake-checker-action@main
+      - uses: DeterminateSystems/nix-installer-action@main
+        with:
+          github-token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
+      - name: Build x86_64-linux
+        run: |
+          # nix flake check --all-systems
+          nix build --accept-flake-config
+  build-aarch64:
+    runs-on: ubuntu-24.04-arm
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Nix flake Nixpkgs inputs
+        uses: DeterminateSystems/flake-checker-action@main
+      - uses: DeterminateSystems/nix-installer-action@main
+        with:
+          github-token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
+      - name: Build aarch64-linux
+        run: |
+          # nix flake check --all-systems
+          nix build --accept-flake-config
