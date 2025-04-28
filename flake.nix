@@ -15,7 +15,13 @@
     let
       inherit (nixCats) utils;
       luaPath = "${./.}";
-      forEachSystem = utils.eachSystem nixpkgs.lib.platforms.all;
+      forEachSystem = utils.eachSystem [
+        "aarch64-linux"
+        "x86_64-linux"
+        "i686-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
       extra_pkg_config = {
         # allowUnfree = true;
       };
