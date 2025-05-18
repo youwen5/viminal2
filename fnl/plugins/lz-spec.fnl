@@ -18,6 +18,27 @@
  [:purescript-vim]
  [:clangd_extensions.nvim]
  [:vim-sleuth]
+ {1 :nvim-spectre
+  :cmd :Spectre
+  :keys [{1 :<leader>S
+          2 (fn []
+              ((. (require :spectre) :toggle)))
+          :desc "Toggle Spectre"}
+         {:mode [:n]
+          1 :<leader>sw
+          2 (fn []
+              ((. (require :spectre) :open_visual) {:select_word true}))
+          :desc "Search current word"}
+         {:mode [:v]
+          1 :<leader>sw
+          2 (fn []
+              ((. (require :spectre) :open_visual)))
+          :desc "Search current word"}
+         {:mode [:n]
+          1 :<leader>sp
+          2 (fn []
+              ((. (require :spectre) :open_file_search) {:select_word true}))
+          :desc "Search current file"}]}
  {1 :nvim-lspconfig :after (. (require :lsp) :setup) :event :BufEnter}
  {1 :which-key.nvim
   :after (fn []

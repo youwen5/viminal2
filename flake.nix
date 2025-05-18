@@ -143,6 +143,7 @@
               harpoon2
               mini-files
               oil-nvim
+              nvim-spectre
 
               blink-ripgrep-nvim # when you hit <C-g>, blink.cmp will rg through the whole project and use it for completions
               pomo-nvim # pomodoro timers
