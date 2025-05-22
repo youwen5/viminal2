@@ -19,6 +19,8 @@
  [:clangd_extensions.nvim]
  [:vim-sleuth]
  {1 :nvim-spectre
+  :after (fn []
+           ((. (require :spectre) :setup) {:default {:replace {:cmd :oxi}}}))
   :cmd :Spectre
   :keys [{1 :<leader>S
           2 (fn []
