@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./fnl/scripts/kitty-padding.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/scripts/kitty-padding.fnl
 local M = {}
 local ___fn___ = vim.fn
 local api = vim.api

@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./fnl/keymaps.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/keymaps.fnl
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>", "<nop>")
 vim.keymap.set("t", "<C-Esc>", "<C-\\><C-n>")

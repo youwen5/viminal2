@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./init.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./init.fnl
 if (os.getenv("TERM") == "xterm-kitty") then
   require("scripts.chameleon").setup()
   require("scripts.kitty-padding").setup()

@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./fnl/plugins/neogit.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/plugins/neogit.fnl
 local function _1_()
   local function graph_style()
     if (os.getenv("TERM") == "xterm-kitty") then

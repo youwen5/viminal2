@@ -1,10 +1,10 @@
--- [nfnl] Compiled from ./fnl/scripts/intellitab.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/scripts/intellitab.fnl
 local v = vim.api
 local treesitter = require("nvim-treesitter")
 local function get_line_indent(line, sw)
   local indent = 0
   for c in line:gmatch("%s") do
-    if (c == "\t") then
+    if (c == "\9") then
       indent = (indent + sw)
     else
       indent = (indent + 1)

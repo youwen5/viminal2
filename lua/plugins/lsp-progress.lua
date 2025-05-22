@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./fnl/plugins/lsp-progress.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/plugins/lsp-progress.fnl
 local function _1_()
   local function _2_(client_name, spinner, series_messages)
     if (#series_messages == 0) then

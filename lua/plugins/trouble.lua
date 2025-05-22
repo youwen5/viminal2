@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./fnl/plugins/trouble.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/plugins/trouble.fnl
 local function _1_()
   return require("trouble").setup()
 end

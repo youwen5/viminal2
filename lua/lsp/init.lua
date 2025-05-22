@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./fnl/lsp/init.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/lsp/init.fnl
 local function _1_()
   local symbols = {Error = "\243\176\133\153", Info = "\243\176\139\188", Hint = "\243\176\140\181", Warn = "\239\129\177"}
   for name, icon in pairs(symbols) do

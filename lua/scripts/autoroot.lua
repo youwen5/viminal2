@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./fnl/scripts/autoroot.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/scripts/autoroot.fnl
 local function _1_()
   local root_names = {".envrc", ".git", "Makefile", ".svn", ".hg"}
   local root_cache = {}

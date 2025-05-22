@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./fnl/plugins/toggleterm.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/plugins/toggleterm.fnl
 local function _1_()
   return require("toggleterm").setup({shade_terminals = false})
 end

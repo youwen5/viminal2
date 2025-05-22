@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./fnl/scripts/obsidian-sync.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/scripts/obsidian-sync.fnl
 local function _1_()
   local date = os.date("%Y-%m-%d %H:%M:%S")
   local commit_commands = {"git add -A", string.format("git commit -m \"auto-update(nvim): %s\"", date)}

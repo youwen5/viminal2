@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./fnl/plugins/lualine.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/plugins/lualine.fnl
 local function _1_()
   local function _2_()
     require("lz.n").trigger_load("lsp-progress")

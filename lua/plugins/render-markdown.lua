@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./fnl/plugins/render-markdown.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/plugins/render-markdown.fnl
 local function _1_()
   return require("render-markdown").setup({file_types = {"markdown"}})
 end

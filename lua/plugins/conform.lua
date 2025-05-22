@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./fnl/plugins/conform.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/plugins/conform.fnl
 local function _1_()
   local function _2_(bufnr)
     if (vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat) then

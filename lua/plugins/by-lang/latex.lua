@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./fnl/plugins/by-lang/latex.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/plugins/by-lang/latex.fnl
 local function _1_()
   require("texpresso")["texpresso_path"] = nixCats("bin.texpresso")
   return nil

@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./fnl/plugins/obsidian.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/plugins/obsidian.fnl
 local function get_workspaces()
   local all_workspaces = {{name = "vault", path = vim.fs.normalize("~/Documents/vaults/vault")}, {name = "alexandria", path = vim.fs.normalize("~/Documents/alexandria/content")}}
   local existing_workspaces = {}

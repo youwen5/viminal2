@@ -1,4 +1,4 @@
--- [nfnl] Compiled from ./fnl/plugins/telescope.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] ./fnl/plugins/telescope.fnl
 local function _1_()
   require("telescope").setup({extensions = {["ui-select"] = {require("telescope.themes").get_dropdown({})}}})
   require("telescope").load_extension("fzf")
