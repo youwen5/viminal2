@@ -216,7 +216,7 @@ return {
       end, { desc = "Search through TailwindCSS utility classes available in the project." })
     end,
   },
-  { "blink-ripgrep", lazy = true },
+  { "blink-ripgrep.nvim", lazy = true },
   { "blink.compat", lazy = true },
   {
     "lazydev.nvim",
@@ -234,7 +234,7 @@ return {
     colorscheme = { "oxocarbon" },
   },
   {
-    "pomo-nvim",
+    "pomo-nvim.nvim",
     cmd = { "TimerStart", "TimerRepeat", "TimerSession" },
     after = function()
       ---@diagnostic disable-next-line: missing-fields

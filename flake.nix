@@ -2,18 +2,8 @@
   description = "A Neovim configuration for the stubborn Nixian hacker";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
-
-    plugins-blink-ripgrep = {
-      url = "github:mikavilpas/blink-ripgrep.nvim";
-      flake = false;
-    };
-
-    plugins-pomo-nvim = {
-      url = "github:epwalsh/pomo.nvim";
-      flake = false;
-    };
   };
   outputs =
     {
@@ -80,7 +70,7 @@
               nixd # nix language server
               tinymist # Typst
               marksman # markdown
-              vale-ls # prose
+              harper # prose
 
               # formatters
               nixfmt-rfc-style # recommended nix formatter
@@ -143,8 +133,6 @@
           # lz.n (not necessarily lazy loaded)
           optionalPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [
-              blink-ripgrep # when you hit <C-g>, blink.cmp will rg through the whole project and use it for completions
-              pomo-nvim # pomodoro timers
             ];
             general = with pkgs.vimPlugins; [
 
@@ -188,9 +176,11 @@
               # completion
               blink-compat # allow nvim-cmp sources to be used with blink
               blink-cmp # the fastest completions
+              blink-ripgrep-nvim
 
               # productivity
               obsidian-nvim # obsidian zettelkasten workflows in nvim
+              pomo-nvim
 
               # misc
               plenary-nvim # utility functions in lua

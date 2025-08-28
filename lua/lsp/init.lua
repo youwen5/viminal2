@@ -69,9 +69,7 @@ M.setup = function()
   lspconfig.clangd.setup({})
   lspconfig.mesonlsp.setup({})
   lspconfig.nushell.setup({})
-  lspconfig.vale_ls.setup({
-    filetypes = { "markdown", "text", "tex", "rst", "typst" },
-  })
+  lspconfig.harper_ls.setup({ settings = { ["harper-ls"] = { linters = { SentenceCapitalization = false } } } })
 end
 
 return M
