@@ -121,6 +121,27 @@ return {
     end,
   },
   {
+    "nvim-spectre",
+    cmd = { "Spectre" },
+    keys = {
+      {
+        "<leader>s",
+        function()
+          require("spectre").open()
+        end,
+      },
+    },
+    after = function()
+      require("spectre").setup({
+        default = {
+          replace = {
+            cmd = "oxi",
+          },
+        },
+      })
+    end,
+  },
+  {
     "mini.bufremove",
     keys = {
       {

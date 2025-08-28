@@ -2,7 +2,7 @@
   description = "A Neovim configuration for the stubborn Nixian hacker";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
   };
   outputs =
@@ -156,6 +156,7 @@
               mini-bufremove # better buffer removal
               which-key-nvim # hints for keybinds
               nvim-autopairs # automatically pair (), {}, '''', etc
+              nvim-spectre
 
               # lsp / formatting
               trouble-nvim # shows diagnostics in a menu
