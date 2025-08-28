@@ -1,8 +1,50 @@
--- [nfnl] Compiled from ./fnl/plugins/oil.fnl by https://github.com/Olical/nfnl, do not edit.
-local function _1_()
-  return require("oil").setup({columns = {"size", "icon"}, keymaps = {["<C-h>"] = "actions.select_split", ["<C-l>"] = "actions.refresh", ["<C-p>"] = "actions.preview", ["<C-s>"] = "actions.select_vsplit", ["<C-t>"] = "actions.select_tab", ["<CR>"] = "actions.select", J = "actions.parent", K = "actions.select", Q = "actions.close", _ = "actions.open_cwd", ["`"] = "actions.cd", ["g."] = "actions.toggle_hidden", ["g?"] = "actions.show_help", ["g\\"] = "actions.toggle_trash", gs = "actions.change_sort", gx = "actions.open_external", ["~"] = "actions.tcd"}, default_file_explorer = false, use_default_keymaps = false})
-end
-local function _2_()
-  return vim.cmd(("Oil " .. vim.fn.getcwd()))
-end
-return {"oil.nvim", after = _1_, cmd = "Oil", keys = {{"<leader>bf", _2_, desc = "Open oil in current working directory", mode = "n"}, {"<leader>be", vim.cmd.Oil, desc = "Open oil in current file directory", mode = "n"}}}
+-- we still use oil.nvim for more complex filesystem manipulations
+return {
+  "oil.nvim",
+  cmd = "Oil",
+  keys = {
+    {
+      "<leader>bf",
+      function()
+        vim.cmd("Oil " .. vim.fn.getcwd())
+      end,
+      mode = "n",
+      desc = "Open oil in current working directory",
+    },
+    {
+      "<leader>be",
+      vim.cmd.Oil,
+      mode = "n",
+      desc = "Open oil in current file directory",
+    },
+  },
+  after = function()
+    require("oil").setup({
+      columns = {
+        "size",
+        "icon",
+      },
+      default_file_explorer = false,
+      use_default_keymaps = false,
+      keymaps = {
+        ["J"] = "actions.parent",
+        ["Q"] = "actions.close",
+        ["<C-h>"] = "actions.select_split",
+        ["<C-l>"] = "actions.refresh",
+        ["<C-p>"] = "actions.preview",
+        ["<C-s>"] = "actions.select_vsplit",
+        ["<C-t>"] = "actions.select_tab",
+        ["<CR>"] = "actions.select",
+        ["K"] = "actions.select",
+        ["_"] = "actions.open_cwd",
+        ["`"] = "actions.cd",
+        ["g."] = "actions.toggle_hidden",
+        ["g?"] = "actions.show_help",
+        ["g\\"] = "actions.toggle_trash",
+        ["gs"] = "actions.change_sort",
+        ["gx"] = "actions.open_external",
+        ["~"] = "actions.tcd",
+      },
+    })
+  end,
+}

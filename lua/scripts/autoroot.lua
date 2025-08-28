@@ -1,28 +1,37 @@
--- [nfnl] Compiled from ./fnl/scripts/autoroot.fnl by https://github.com/Olical/nfnl, do not edit.
-local function _1_()
-  local root_names = {".envrc", ".git", "Makefile", ".svn", ".hg"}
+local M = {}
+
+M.setup = function()
+  -- Array of file names indicating root directory. Modify to your liking.
+  local root_names = { ".envrc", ".git", "Makefile", ".svn", ".hg" }
+
+  -- Cache to use for speed up (at cost of possibly outdated results)
   local root_cache = {}
-  local function set_root()
+
+  local set_root = function()
+    -- Get directory path to start search from
     local path = vim.api.nvim_buf_get_name(0)
-    if (path == "") then
-      return 
-    else
+    if path == "" then
+      return
     end
     path = vim.fs.dirname(path)
+
+    -- Try cache and resort to searching upward for root directory
     local root = root_cache[path]
-    if (root == nil) then
-      local root_file = vim.fs.find(root_names, {path = path, upward = true})[1]
-      if (root_file == nil) then
-        return 
-      else
+    if root == nil then
+      local root_file = vim.fs.find(root_names, { path = path, upward = true })[1]
+      if root_file == nil then
+        return
       end
       root = vim.fs.dirname(root_file)
       root_cache[path] = root
-    else
     end
-    return vim.fn.chdir(root)
+
+    -- Set current directory
+    vim.fn.chdir(root)
   end
+
   local root_augroup = vim.api.nvim_create_augroup("MyAutoRoot", {})
-  return vim.api.nvim_create_autocmd("BufEnter", {callback = set_root, group = root_augroup})
+  vim.api.nvim_create_autocmd("BufEnter", { group = root_augroup, callback = set_root })
 end
-return {setup = _1_}
+
+return M
