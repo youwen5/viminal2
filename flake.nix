@@ -233,35 +233,44 @@
             ];
           };
         };
-      packageDefinitions = {
-        nvim =
-          { pkgs, ... }:
-          {
-            settings = {
-              wrapRc = true;
-              aliases = [
-                "vim"
-                "vi"
-              ];
-            };
-            categories = {
-              general = true;
-              gitPlugins = true;
-              customPlugins = true;
-              bin = {
-                websocat = "${pkgs.websocat}/bin/websocat";
-                tinymist = "${pkgs.tinymist}/bin/tinymist";
-                texpresso = "${pkgs.texpresso}/bin/texpresso";
-                neovim-node-host = "${pkgs.neovim-node-client}/bin/neovim-node-host";
+      packageDefinitions =
+        let
+          common =
+            {
+              pkgs,
+              wrap ? true,
+              ...
+            }:
+            {
+              settings = {
+                wrapRc = wrap;
+                aliases = [
+                  "vim"
+                  "vi"
+                ];
               };
-              nixdExtras = {
-                nixpkgs = inputs.nixpkgs.outPath;
-                flake-path = inputs.self.outPath;
-                system = pkgs.system;
+              categories = {
+                general = true;
+                gitPlugins = true;
+                customPlugins = true;
+                bin = {
+                  websocat = "${pkgs.websocat}/bin/websocat";
+                  tinymist = "${pkgs.tinymist}/bin/tinymist";
+                  texpresso = "${pkgs.texpresso}/bin/texpresso";
+                  neovim-node-host = "${pkgs.neovim-node-client}/bin/neovim-node-host";
+                };
+                nixdExtras = {
+                  nixpkgs = inputs.nixpkgs.outPath;
+                  flake-path = inputs.self.outPath;
+                  system = pkgs.system;
+                };
               };
             };
-          };
-      };
+        in
+        {
+          nvim = params@{ ... }: (common params);
+          nvim-no-rc = params@{ ... }: (common (params // { wrap = false; }));
+        };
       defaultPackageName = "nvim";
     in
     forEachSystem (
