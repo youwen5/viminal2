@@ -32,11 +32,27 @@ the Nix package manager available (with flakes).
 nix run 'github:youwen5/viminal2'
 ```
 
-## Design
+## Hacking
+
+This flake exposes a package at `packages.${system}.nvim-no-rc` that doesn't
+bundle the Lua configuration with the files. (It still includes all of the
+plugins managed by Nix and the nixCats Lua helper). This means you can quickly
+hack on the configuration just like a regular Neovim config without constantly
+re-running `nix build`. Here's how:
+
+Clone this repository to `~/.config/nvim`. Enter the repository and run `nix
+build .#nvim-no-rc`. Then, you can run Neovim from within the symlink,
+`result/bin/nvim-no-rc`, which will use the Neovim configuration in
+`~/.config/nvim`. You can then quickly hack on any Lua files without constant
+rebuilds.
+
+## Philosophy
 
 As this is my second configuration from scratch (if you count Nixvim as "from
 scratch"), I wanted to do it right (so I could stop wasting my time configuring
-my editor).
+my editor). I've been using this configuration daily for various purposes for
+over a year, with no desire to declare Neovim bankruptcy yet, so presumably it
+was a success.
 
 For completion, I use [blink.cmp](https://github.com/Saghen/blink.cmp). This
 plugin is much, much faster than `nvim-cmp` thanks to optimized `SIMD`
