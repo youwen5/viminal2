@@ -78,7 +78,7 @@ vim.api.nvim_create_autocmd({
 -- flash yanked test
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
-    vim.highlight.on_yank({ higroup = "Visual", timeout = 300 })
+    vim.hl.on_yank({ higroup = "Visual", timeout = 300 })
   end,
 })
 
