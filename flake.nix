@@ -99,11 +99,10 @@
           startupPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [
               # deps
-              snacks-nvim # depended on by nvim-aider
-
             ];
             general = with pkgs.vimPlugins; [
               lz-n
+              snacks-nvim # depended on by nvim-aider
               (nvim-treesitter.withPlugins (
                 p:
                 (with p; [
