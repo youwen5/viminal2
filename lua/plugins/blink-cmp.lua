@@ -27,7 +27,11 @@ return {
       },
       fuzzy = { prebuilt_binaries = { download = false } },
       keymap = {
-        ["<C-g>"] = { _2_ },
+        ["<C-g>"] = {
+          function()
+            require("blink-cmp").show({ providers = { "ripgrep" } })
+          end,
+        },
         ["<C-j>"] = { "snippet_backward", "fallback" },
         ["<C-k>"] = { "snippet_forward", "fallback" },
         ["<S-Tab>"] = {},
