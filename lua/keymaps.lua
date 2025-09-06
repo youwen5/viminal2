@@ -31,3 +31,7 @@ vim.keymap.set("v", "g<C-x>", "g<C-x>gv")
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename)
 
 vim.keymap.set("i", "<Tab>", require("scripts.intellitab").indent)
+
+vim.keymap.set({ "n", "i", "v" }, "<C-c>", function()
+  vim.diagnostic.config({ virtual_lines = { current_line = not vim.diagnostic.config().virtual_lines.current_line } })
+end, { desc = "toggle diagnostics on all lines" })
