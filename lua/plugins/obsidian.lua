@@ -39,7 +39,8 @@ return {
       local opts = {
         ui = { enable = false },
         workspaces = workspaces,
-        completion = { nvim_cmp = false },
+        completion = { nvim_cmp = false, blink = true },
+        legacy_commands = false,
       }
       require("obsidian").setup(opts)
     end
