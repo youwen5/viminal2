@@ -1,17 +1,6 @@
 local M = {}
 
 M.setup = function()
-  vim.diagnostic.config({
-    signs = {
-      text = {
-        [vim.diagnostic.severity.ERROR] = "󰅙",
-        [vim.diagnostic.severity.INFO] = "󰋼",
-        [vim.diagnostic.severity.HINT] = "󰌵",
-        [vim.diagnostic.severity.WARN] = "",
-      },
-    },
-  })
-
   local lspconfig = require("lspconfig")
 
   lspconfig.lua_ls.setup({

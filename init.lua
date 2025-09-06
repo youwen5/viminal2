@@ -94,3 +94,15 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
   end,
   desc = "Resize splits with terminal window",
 })
+
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "󰅙",
+      [vim.diagnostic.severity.INFO] = "󰋼",
+      [vim.diagnostic.severity.HINT] = "󰌵",
+      [vim.diagnostic.severity.WARN] = "",
+    },
+  },
+  virtual_lines = { current_line = true },
+})

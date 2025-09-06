@@ -171,7 +171,6 @@
 
               # lsp / formatting
               trouble-nvim # shows diagnostics in a menu
-              lsp_lines-nvim # shows LSP diagnostics in virtual text under the line
               nvim-lspconfig # configures language servers with sane defaults
               conform-nvim # polyglot formatting swiss army knife
 
