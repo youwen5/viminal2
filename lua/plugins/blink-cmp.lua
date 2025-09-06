@@ -48,9 +48,6 @@ return {
         providers = {
           lazydev = { module = "lazydev.integrations.blink", name = "LazyDev", score_offset = 100 },
           markdown = { module = "render-markdown.integ.blink", name = "RenderMarkdown" },
-          obsidian = { module = "blink.compat.source", name = "obsidian" },
-          obsidian_new = { module = "blink.compat.source", name = "obsidian_new" },
-          obsidian_tags = { module = "blink.compat.source", name = "obsidian_tags" },
           ripgrep = { module = "blink-ripgrep", name = "Ripgrep" },
         },
       },
