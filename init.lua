@@ -83,9 +83,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- silence the hover 'no information available' notification
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  silent = true,
-})
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({ silent = true })
 
 vim.api.nvim_create_autocmd({ "VimResized" }, {
   group = vim.api.nvim_create_augroup("EqualizeSplits", {}),
