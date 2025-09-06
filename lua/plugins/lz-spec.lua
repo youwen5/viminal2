@@ -15,7 +15,14 @@ return {
   require("plugins.neogit"),
   require("plugins.obsidian"),
   require("plugins.starter"),
+  require("plugins.aider"),
   { "vim-wakatime" },
+  {
+    "snacks.nvim",
+    after = function()
+      require("snacks").setup()
+    end,
+  },
   { "clangd_extensions.nvim" },
   { "vim-sleuth" },
   {

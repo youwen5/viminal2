@@ -31,10 +31,27 @@
         "type": "github"
       }
     },
+    "plugins-nvim-aider": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1748584414,
+        "narHash": "sha256-oVqH/IKzMIsPfGkivz8AWZKg1snJtw6/54owMqqcg+Y=",
+        "owner": "GeorgesAlkhouri",
+        "repo": "nvim-aider",
+        "rev": "e15ea121074e774e436eb2223929fde7a01d4f52",
+        "type": "github"
+      },
+      "original": {
+        "owner": "GeorgesAlkhouri",
+        "repo": "nvim-aider",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "nixCats": "nixCats",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "plugins-nvim-aider": "plugins-nvim-aider"
       }
     }
   },

@@ -4,6 +4,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
+    plugins-nvim-aider = {
+      url = "github:GeorgesAlkhouri/nvim-aider";
+      flake = false;
+    };
   };
   outputs =
     {
@@ -50,6 +54,7 @@
           settings,
           categories,
           name,
+          mkPlugin,
           ...
         }@packageDef:
         {
@@ -84,12 +89,19 @@
               libnotify # required for pomo.nvim
               neovim-node-client # required for tailwind-tools-nvim's node component
               nodejs # ^^^
+
+              # ai tools
+              aider-chat
             ];
           };
 
           # install lz.n and treesitter grammars
           startupPlugins = {
-            # gitPlugins = with pkgs.neovimPlugins; [ ];
+            gitPlugins = with pkgs.neovimPlugins; [
+              # deps
+              snacks-nvim # depended on by nvim-aider
+
+            ];
             general = with pkgs.vimPlugins; [
               lz-n
               (nvim-treesitter.withPlugins (
@@ -132,10 +144,10 @@
           # plugins which are installed, but not loaded, and will be handled by
           # lz.n (not necessarily lazy loaded)
           optionalPlugins = {
-            gitPlugins = with pkgs.neovimPlugins; [
+            gitPlugins = [
+              (mkPlugin "nvim-aider" inputs.plugins-nvim-aider)
             ];
             general = with pkgs.vimPlugins; [
-
               # tools - stuff that adds entirely new functionality
               telescope-nvim
               neogit
