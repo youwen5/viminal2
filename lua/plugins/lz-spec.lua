@@ -13,7 +13,6 @@ return {
   require("plugins.toggleterm"),
   require("plugins.by-lang.latex"),
   require("plugins.neogit"),
-  require("plugins.obsidian"),
   require("plugins.starter"),
   require("plugins.aider"),
   { "vim-wakatime" },

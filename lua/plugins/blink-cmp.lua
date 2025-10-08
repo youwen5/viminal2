@@ -43,7 +43,6 @@ return {
         default = { "lsp", "path", "snippets", "buffer" },
         per_filetype = {
           lua = { "lazydev", "lsp", "path", "snippets", "buffer" },
-          markdown = { "lsp", "snippets", "obsidian", "obsidian_new", "obsidian_tags", "path", "buffer", "markdown" },
         },
         providers = {
           lazydev = { module = "lazydev.integrations.blink", name = "LazyDev", score_offset = 100 },

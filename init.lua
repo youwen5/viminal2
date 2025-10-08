@@ -5,7 +5,6 @@ end
 
 require("keymaps")
 require("plugins")
-require("scripts.obsidian-sync")
 
 require("scripts.autoroot").setup()
 

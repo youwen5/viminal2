@@ -190,7 +190,6 @@
               blink-ripgrep-nvim
 
               # productivity
-              obsidian-nvim # obsidian zettelkasten workflows in nvim
               pomo-nvim
 
               # misc

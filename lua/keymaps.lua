@@ -35,3 +35,18 @@ vim.keymap.set("i", "<Tab>", require("scripts.intellitab").indent)
 vim.keymap.set({ "n", "i", "v" }, "<C-c>", function()
   vim.diagnostic.config({ virtual_lines = { current_line = not vim.diagnostic.config().virtual_lines.current_line } })
 end, { desc = "toggle diagnostics on all lines" })
+
+vim.api.nvim_create_user_command("AutoSync", function()
+  local date = os.date("%Y-%m-%d %H:%M:%S")
+  local commit_commands = {
+    "git add -A",
+    string.format([[git commit -m "auto-update(nvim): %s"]], date),
+  }
+  for _, cmd in ipairs(commit_commands) do
+    vim.fn.system(cmd)
+  end
+  vim.notify("Committed all local changes.", vim.log.levels.INFO)
+  vim.cmd("Neogit push")
+end, {})
+
+vim.keymap.set("n", "<leader>os", vim.cmd.AutoSync)
