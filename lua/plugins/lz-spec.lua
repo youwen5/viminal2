@@ -213,25 +213,6 @@ return {
       require("typescript-tools").setup({})
     end,
   },
-  {
-    "tailwind-tools.nvim",
-    after = function()
-      local lz = require("lz.n")
-
-      lz.trigger_load("telescope.nvim")
-      lz.trigger_load("nvim-lspconfig")
-
-      ---@diagnostic disable-next-line: missing-fields
-      require("tailwind-tools").setup({
-        conceal = { enabled = true },
-        document_color = { enabled = true },
-      })
-
-      vim.keymap.set("n", "<leader>ft", function()
-        vim.cmd("Telescope tailwind utilities")
-      end, { desc = "Search through TailwindCSS utility classes available in the project." })
-    end,
-  },
   { "blink-ripgrep.nvim", lazy = true },
   { "blink.compat", lazy = true },
   {

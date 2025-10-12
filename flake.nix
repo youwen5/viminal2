@@ -87,8 +87,6 @@
               stylua
 
               libnotify # required for pomo.nvim
-              neovim-node-client # required for tailwind-tools-nvim's node component
-              nodejs # ^^^
 
               # ai tools
               aider-chat
@@ -218,7 +216,6 @@
 
               # TS/JS
               typescript-tools-nvim # better typescript-language-server experience
-              tailwind-tools-nvim # tailwindcss enhanacements and completions
 
               # cpp
               clangd_extensions-nvim
