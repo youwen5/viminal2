@@ -1,9 +1,7 @@
 local M = {}
 
 M.setup = function()
-  local lspconfig = require("lspconfig")
-
-  lspconfig.lua_ls.setup({
+  vim.lsp.config("lua_ls", {
     settings = {
       Lua = {
         runtime = {
@@ -28,41 +26,21 @@ M.setup = function()
       },
     },
   })
+  vim.lsp.enable("nixd")
+  vim.lsp.enable("marksman")
+  vim.lsp.enable("svelte")
+  vim.lsp.enable("texlab")
+  vim.lsp.enable("clangd")
+  vim.lsp.enable("mesonlsp")
+  vim.lsp.enable("nushell")
+  vim.lsp.enable("harper_ls")
+  vim.lsp.enable("tinymist")
+  vim.lsp.enable("lua_ls")
 
-  lspconfig.nixd.setup({
-    nixd = {
-      nixpkgs = {
-        expr = [[import (builtins.getFlake ")]] .. nixCats("nixdExtras.nixpkgs") .. [[") { }   ]],
-      },
-      -- options = {
-      --   nixos = {
-      --     expr = [[(builtins.getFlake "]]
-      --       .. nixCats("nixdExtras.flake-path")
-      --       .. [[").nixosConfigurations."]]
-      --       .. nixCats("nixdExtras.systemCFGname")
-      --       .. [[".options]],
-      --   },
-      --   -- (builtins.getFlake "<path_to_system_flake>").homeConfigurations."<name>".options
-      --   ["home-manager"] = {
-      --     expr = [[(builtins.getFlake "]]
-      --       .. nixCats("nixdExtras.flake-path")
-      --       .. [[").homeConfigurations."]]
-      --       .. nixCats("nixdExtras.homeCFGname")
-      --       .. [[".options]],
-      --   },
-      -- },
-    },
-  })
-  lspconfig.marksman.setup({})
-  lspconfig.tinymist.setup({
+  vim.lsp.config("harper_ls", { settings = { ["harper-ls"] = { linters = { SentenceCapitalization = false } } } })
+  vim.lsp.config("tinymist", {
     offset_encoding = "utf-8",
   })
-  lspconfig.svelte.setup({})
-  lspconfig.texlab.setup({})
-  lspconfig.clangd.setup({})
-  lspconfig.mesonlsp.setup({})
-  lspconfig.nushell.setup({})
-  lspconfig.harper_ls.setup({ settings = { ["harper-ls"] = { linters = { SentenceCapitalization = false } } } })
 end
 
 return M
