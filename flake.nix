@@ -268,7 +268,7 @@
                 nixdExtras = {
                   nixpkgs = inputs.nixpkgs.outPath;
                   flake-path = inputs.self.outPath;
-                  system = pkgs.system;
+                  system = pkgs.stdenv.hostPlatform.system;
                 };
               };
             };
