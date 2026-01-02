@@ -40,6 +40,9 @@ M.setup = function()
   vim.lsp.config("harper_ls", { settings = { ["harper-ls"] = { linters = { SentenceCapitalization = false } } } })
   vim.lsp.config("tinymist", {
     offset_encoding = "utf-8",
+    settings = {
+      typstExtraArgs = { "--features", "html" },
+    },
   })
 end
 
