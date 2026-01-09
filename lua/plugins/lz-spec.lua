@@ -305,4 +305,11 @@ return {
       end)
     end,
   },
+  {
+    "lean.nvim",
+    filetypes = { "lean" },
+    after = function()
+      require("lean").setup({ mappings = true })
+    end,
+  },
 }

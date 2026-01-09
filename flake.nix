@@ -228,6 +228,9 @@
 
               # haskell
               haskell-tools-nvim
+
+              # lean
+              lean-nvim
             ];
           };
 
