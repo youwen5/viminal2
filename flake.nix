@@ -90,6 +90,7 @@
 
               # ai tools
               opencode
+              lsof # required by opencode
             ];
           };
 

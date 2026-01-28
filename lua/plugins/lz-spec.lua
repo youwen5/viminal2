@@ -310,4 +310,103 @@ return {
       require("lean").setup({ mappings = true })
     end,
   },
+  {
+    "opencode.nvim",
+    keys = {
+      {
+        "<C-a>",
+        function()
+          require("opencode").ask("@this: ", { submit = true })
+        end,
+        mode = { "n", "x" },
+        desc = "Ask opencode…",
+      },
+      {
+        "<C-x>",
+        function()
+          require("opencode").select()
+        end,
+        mode = { "n", "x" },
+        desc = "Execute opencode action…",
+      },
+      {
+        "<C-.>",
+        function()
+          vim.g.opencode_win_direction = "float"
+          require("opencode").toggle()
+        end,
+        mode = { "n", "t" },
+        desc = "Toggle opencode (Float)",
+      },
+      {
+        "<C-,>",
+        function()
+          vim.g.opencode_win_direction = "vertical"
+          require("opencode").toggle()
+        end,
+        mode = { "n", "t" },
+        desc = "Toggle opencode (Sidebar)",
+      },
+      {
+        "go",
+        function()
+          return require("opencode").operator("@this ")
+        end,
+        mode = { "n", "x" },
+        desc = "Add range to opencode",
+        expr = true,
+      },
+      {
+        "goo",
+        function()
+          return require("opencode").operator("@this ") .. "_"
+        end,
+        mode = { "n" },
+        desc = "Add line to opencode",
+        expr = true,
+      },
+      {
+        "<S-C-u>",
+        function()
+          require("opencode").command("session.half.page.up")
+        end,
+        mode = { "n" },
+        desc = "Scroll opencode up",
+      },
+      {
+        "<S-C-d>",
+        function()
+          require("opencode").command("session.half.page.down")
+        end,
+        mode = { "n" },
+        desc = "Scroll opencode down",
+      },
+    },
+    after = function()
+      vim.o.autoread = true
+      require("lz.n").trigger_load("toggleterm.nvim")
+      local Terminal = require("toggleterm.terminal").Terminal
+      local opencode_term = Terminal:new({
+        cmd = "opencode",
+        hidden = true,
+        direction = "float",
+        on_open = function(term)
+          vim.cmd("startinsert!")
+        end,
+        count = 99,
+      })
+
+      vim.g.opencode_opts = {
+        provider = {
+          toggle = function(self)
+            opencode_term:toggle(vim.g.opencode_win_direction or "float")
+          end,
+          start = function(self) end,
+          stop = function(self)
+            opencode_term:shutdown()
+          end,
+        },
+      }
+    end,
+  },
 }
