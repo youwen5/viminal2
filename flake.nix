@@ -192,7 +192,6 @@
 
               # misc
               plenary-nvim # utility functions in lua
-              vim-wakatime # coding time tracking
               neocord # discord RPC
 
               # colorschemes

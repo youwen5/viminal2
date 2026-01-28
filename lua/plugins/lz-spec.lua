@@ -15,7 +15,6 @@ return {
   require("plugins.neogit"),
   require("plugins.starter"),
   require("plugins.aider"),
-  { "vim-wakatime" },
   {
     "snacks.nvim",
     after = function()
