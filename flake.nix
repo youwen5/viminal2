@@ -4,8 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
-    plugins-nvim-aider = {
-      url = "github:GeorgesAlkhouri/nvim-aider";
+    plugins-treesitter-modules = {
+      url = "github:/MeanderingProgrammer/treesitter-modules.nvim";
       flake = false;
     };
   };
@@ -78,7 +78,7 @@
               harper # prose
 
               # formatters
-              nixfmt-rfc-style # recommended nix formatter
+              nixfmt # recommended nix formatter
               nodePackages_latest.prettier
               taplo # for TOML
               typstyle # for Typst
@@ -89,14 +89,15 @@
               libnotify # required for pomo.nvim
 
               # ai tools
-              aider-chat
+              opencode
             ];
           };
 
           # install lz.n and treesitter grammars
           startupPlugins = {
-            gitPlugins = with pkgs.neovimPlugins; [
+            gitPlugins = [
               # deps
+              (mkPlugin "treesitter-modules" inputs.plugins-treesitter-modules)
             ];
             general = with pkgs.vimPlugins; [
               lz-n
@@ -125,7 +126,7 @@
                   bash
                   make
                   gitcommit
-                  jsonc
+                  # jsonc
                   meson
                   nu
                   tsx
@@ -142,11 +143,8 @@
           # lz.n (not necessarily lazy loaded)
           optionalPlugins = {
             gitPlugins = [
-              (mkPlugin "nvim-aider" inputs.plugins-nvim-aider)
             ];
             general = with pkgs.vimPlugins; [
-              # tools - stuff that adds entirely new functionality
-              telescope-nvim
               neogit
               toggleterm-nvim
               undotree
@@ -171,6 +169,9 @@
               trouble-nvim # shows diagnostics in a menu
               nvim-lspconfig # configures language servers with sane defaults
               conform-nvim # polyglot formatting swiss army knife
+
+              # AI
+              opencode-nvim
 
               # bar
               lualine-nvim
@@ -307,7 +308,7 @@
                 with pkgs;
                 [
                   lua-language-server
-                  nixfmt-rfc-style
+                  nixfmt
                   stylua
                 ]
               );

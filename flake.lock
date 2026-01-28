@@ -31,19 +31,19 @@
         "type": "github"
       }
     },
-    "plugins-nvim-aider": {
+    "plugins-treesitter-modules": {
       "flake": false,
       "locked": {
-        "lastModified": 1761640116,
-        "narHash": "sha256-LHSDfn9I+Ff83u8DZlom7fgZNwqSZ1h72y6NJq0eKTw=",
-        "owner": "GeorgesAlkhouri",
-        "repo": "nvim-aider",
-        "rev": "c8a4f952937d54f17dc23bd378e9e3b373f502b2",
+        "lastModified": 1767382667,
+        "narHash": "sha256-wDzHRwEnHks+9ssOtQFZDQ2DB/C27oEKP0TWB4GHv8M=",
+        "owner": "MeanderingProgrammer",
+        "repo": "treesitter-modules.nvim",
+        "rev": "7efc486c933a361568855b10e0829aa2cda4b6b0",
         "type": "github"
       },
       "original": {
-        "owner": "GeorgesAlkhouri",
-        "repo": "nvim-aider",
+        "owner": "MeanderingProgrammer",
+        "repo": "treesitter-modules.nvim",
         "type": "github"
       }
     },
@@ -51,7 +51,7 @@
       "inputs": {
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",
-        "plugins-nvim-aider": "plugins-nvim-aider"
+        "plugins-treesitter-modules": "plugins-treesitter-modules"
       }
     }
   },

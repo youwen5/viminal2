@@ -14,7 +14,6 @@ return {
   require("plugins.by-lang.latex"),
   require("plugins.neogit"),
   require("plugins.starter"),
-  require("plugins.aider"),
   {
     "snacks.nvim",
     after = function()

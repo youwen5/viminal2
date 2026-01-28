@@ -37,24 +37,31 @@ vim.cmd.colorscheme("oxocarbon")
 vim.g.node_host_prog = nixCats("bin.neovim-node-host")
 vim.g.loaded_node_provider = nil
 
-require("nvim-treesitter.configs").setup({
+vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.wo[0][0].foldmethod = "expr"
+
+vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+
+require("treesitter-modules").setup({
+  -- list of parser names, or 'all', that must be installed
   ensure_installed = {},
+  -- list of parser names, or 'all', to ignore installing
+  ignore_install = "all",
+  -- install parsers in ensure_installed synchronously
   sync_install = false,
+  -- automatically install missing parsers when entering buffer
   auto_install = false,
-  modules = { "highlight", "incremental_selection", "indent" },
-  ignore_install = {},
-  highlight = { enable = true },
-  disable = function(_, buf)
-    local max_filesize = 100 * 1024 -- 100 KB
-    ---@diagnostic disable-next-line: undefined-field
-    local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-    if ok and stats and stats.size > max_filesize then
-      return true
-    end
-  end,
-  additional_vim_regex_highlighting = false,
+  fold = {
+    enable = true,
+  },
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
   incremental_selection = {
     enable = true,
+    -- set value to `false` to disable individual mapping
+    -- node_decremental captures both node_incremental and scope_incremental
     keymaps = {
       init_selection = "<CR>",
       node_incremental = "<C-k>",
@@ -62,7 +69,37 @@ require("nvim-treesitter.configs").setup({
       node_decremental = "<C-j>",
     },
   },
+  indent = {
+    enable = true,
+  },
 })
+
+-- require("nvim-treesitter.config").setup({
+--   ensure_installed = {},
+--   sync_install = false,
+--   auto_install = false,
+--   modules = { "highlight", "incremental_selection", "indent" },
+--   ignore_install = {},
+--   highlight = { enable = true },
+--   disable = function(_, buf)
+--     local max_filesize = 100 * 1024 -- 100 KB
+--     ---@diagnostic disable-next-line: undefined-field
+--     local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+--     if ok and stats and stats.size > max_filesize then
+--       return true
+--     end
+--   end,
+--   additional_vim_regex_highlighting = false,
+--   incremental_selection = {
+--     enable = true,
+--     keymaps = {
+--       init_selection = "<CR>",
+--       node_incremental = "<C-k>",
+--       scope_incremental = "<BS>",
+--       node_decremental = "<C-j>",
+--     },
+--   },
+-- })
 
 -- no line numbers for terminals
 vim.api.nvim_create_autocmd({
