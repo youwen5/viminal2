@@ -79,7 +79,7 @@
 
               # formatters
               nixfmt # recommended nix formatter
-              nodePackages_latest.prettier
+              prettier
               taplo # for TOML
               typstyle # for Typst
               rustfmt
